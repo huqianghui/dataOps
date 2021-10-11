@@ -1,0 +1,20 @@
+{
+	"name": "newFeature_dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "securityResult",
+						"type": "DatasetReference"
+					},
+					"name": "securityResult"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> securityResult"
+		}
+	}
+}
