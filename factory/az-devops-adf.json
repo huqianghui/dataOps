@@ -1,0 +1,9 @@
+{
+	"name": "az-devops-adf",
+	"location": "chinaeast2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1ef2a441-287e-4aa0-9cea-9af5839f12ac",
+		"tenantId": "2f72f96c-65f9-4a6a-b166-dd61493e4b2e"
+	}
+}

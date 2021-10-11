@@ -1,0 +1,20 @@
+{
+	"name": "DestinationDataset_kb2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "azlzjson",
+				"fileSystem": "azureml-blobstore-4ecca540-0460-4772-a986-7714d859b9ee"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
