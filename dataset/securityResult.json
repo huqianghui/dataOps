@@ -1,0 +1,23 @@
+{
+	"name": "securityResult",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azSecurityResult",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "AzureSecurityCenterRecommendations_2021-09-17.csv",
+				"container": "csvfiles"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
