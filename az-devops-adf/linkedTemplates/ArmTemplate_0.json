@@ -1,0 +1,898 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "az-devops-adf"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"azSecurityResult_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'azSecurityResult'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mlaztest6197607535.dfs.core.chinacloudapi.cn"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/wait10Pipeline')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "WaitPipeline1",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 10
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/azSecurityResult')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('azSecurityResult_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_kb2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "azlzjson",
+						"fileSystem": "azureml-blobstore-4ecca540-0460-4772-a986-7714d859b9ee"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_kb2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "main.json",
+						"container": "managezone"
+					}
+				},
+				"schema": {
+					"type": "object",
+					"properties": {
+						"$schema": {
+							"type": "string"
+						},
+						"contentVersion": {
+							"type": "string"
+						},
+						"metadata": {
+							"type": "object",
+							"properties": {
+								"_generator": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"version": {
+											"type": "string"
+										},
+										"templateHash": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"parameters": {
+							"type": "object",
+							"properties": {
+								"location": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"environment": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										},
+										"allowedValues": {
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										}
+									}
+								},
+								"prefix": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										},
+										"maxLength": {
+											"type": "integer"
+										},
+										"minLength": {
+											"type": "integer"
+										}
+									}
+								},
+								"tags": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "object"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"enableDnsAndFirewallDeployment": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "boolean"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"vnetAddressPrefix": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"azureFirewallSubnetAddressPrefix": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"servicesSubnetAddressPrefix": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"firewallPrivateIp": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"dnsServerAdresses": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"firewallPolicyId": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"privateDnsZoneIdKeyVault": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"privateDnsZoneIdQueue": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"privateDnsZoneIdBlob": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"privateDnsZoneIdNamespace": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"privateDnsZoneIdContainerRegistry": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								"privateDnsZoneIdSynapse": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"defaultValue": {
+											"type": "string"
+										},
+										"metadata": {
+											"type": "object",
+											"properties": {
+												"description": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						"functions": {
+							"type": "array"
+						},
+						"variables": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"tagsDefault": {
+									"type": "object",
+									"properties": {
+										"Owner": {
+											"type": "string"
+										},
+										"Project": {
+											"type": "string"
+										},
+										"Environment": {
+											"type": "string"
+										},
+										"Toolkit": {
+											"type": "string"
+										},
+										"Name": {
+											"type": "string"
+										}
+									}
+								},
+								"tagsJoined": {
+									"type": "string"
+								}
+							}
+						},
+						"resources": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"type": {
+										"type": "string"
+									},
+									"apiVersion": {
+										"type": "string"
+									},
+									"name": {
+										"type": "string"
+									},
+									"location": {
+										"type": "string"
+									},
+									"tags": {
+										"type": "string"
+									},
+									"properties": {
+										"type": "object"
+									}
+								}
+							}
+						},
+						"outputs": {
+							"type": "object",
+							"properties": {
+								"vnetId": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								},
+								"firewallPrivateIp": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								},
+								"privateDnsZoneIdKeyVault": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								},
+								"privateDnsZoneIdDataFactory": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								},
+								"privateDnsZoneIdDataFactoryPortal": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								},
+								"privateDnsZoneIdBlob": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								},
+								"privateDnsZoneIdDfs": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								},
+								"privateDnsZoneIdSqlServer": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								},
+								"privateDnsZoneIdMySqlServer": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								},
+								"privateDnsZoneIdNamespace": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								},
+								"privateDnsZoneIdSynapseDev": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								},
+								"privateDnsZoneIdSynapseSql": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/securityResult')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "azSecurityResult",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "AzureSecurityCenterRecommendations_2021-09-17.csv",
+						"container": "csvfiles"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/azSecurityResult')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "azureml-blobstore-4ecca540-0460-4772-a986-7714d859b9ee"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CopyPipeline_AZ_LZ_config')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy_kb2",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "managezone//main.json"
+							},
+							{
+								"name": "Destination",
+								"value": "azureml-blobstore-4ecca540-0460-4772-a986-7714d859b9ee//azlzjson"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "JsonSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"maxConcurrentConnections": 2,
+									"recursive": true,
+									"modifiedDatetimeStart": "2020-04-01T00:00:00Z",
+									"modifiedDatetimeEnd": "2021-10-09T00:00:00Z",
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "JsonReadSettings"
+								}
+							},
+							"sink": {
+								"type": "JsonSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings",
+									"maxConcurrentConnections": 4
+								},
+								"formatSettings": {
+									"type": "JsonWriteSettings",
+									"filePattern": "setOfObjects"
+								}
+							},
+							"enableStaging": false,
+							"validateDataConsistency": false,
+							"logSettings": {
+								"enableCopyActivityLog": true,
+								"copyActivityLogSettings": {
+									"logLevel": "Info",
+									"enableReliableLogging": false
+								},
+								"logLocationSettings": {
+									"linkedServiceName": {
+										"referenceName": "AzureBlobStorage1",
+										"type": "LinkedServiceReference"
+									},
+									"path": "managezone"
+								}
+							},
+							"dataIntegrationUnits": 2
+						},
+						"inputs": [
+							{
+								"referenceName": "SourceDataset_kb2",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DestinationDataset_kb2",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": [],
+				"lastPublishTime": "2021-10-09T04:26:38Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SourceDataset_kb2')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationDataset_kb2')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/newFeature_dataflow1')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "securityResult",
+								"type": "DatasetReference"
+							},
+							"name": "securityResult"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "DelimitedText1",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [],
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> securityResult\nsecurityResult sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tumask: 0022,\n\tpreCommands: [],\n\tpostCommands: [],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/securityResult')]",
+				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]"
+			]
+		}
+	]
+}
