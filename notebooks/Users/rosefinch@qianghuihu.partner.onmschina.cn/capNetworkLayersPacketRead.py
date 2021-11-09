@@ -82,7 +82,27 @@ capDataframe= spark.createDataFrame(spark.sparkContext.emptyRDD(), schema)
 
 capDataframe.show()
 
-capDataframe.write.format("delta").save("/mnt/delta/cap/") 
+# capDataframe.write.format("delta").save("/mnt/delta/cap/") 
+
+# COMMAND ----------
+
+configs = {"dfs.adls.oauth2.access.token.provider.type" : "ClientCredential",
+  "dfs.adls.oauth2.client.id" : "681d9f52-5c95-4f5f-921d-b75ac0128acc",
+  "dfs.adls.oauth2.credential" : "NwV_q37.tM.c-ghtWavL1W9-Hp43cN3Jmf",
+  "dfs.adls.oauth2.refresh.url" : "https://login.chinacloudapi.cn/2f72f96c-65f9-4a6a-b166-dd61493e4b2e/oauth2/token"}
+
+if "datalake1demo/" not in [file.name for file in dbutils.fs.ls("/mnt")]:
+    dbutils.fs.mount(
+      source = "adl://datalake1demo.azuredatalakestore.net/",
+      mount_point = "/mnt/datalake1demo",
+      extra_configs = configs)
+    
+spark.conf.set("dfs.adls.oauth2.access.token.provider.type", "ClientCredential")
+spark.conf.set("dfs.adls.oauth2.client.id", "681d9f52-5c95-4f5f-921d-b75ac0128acc")
+spark.conf.set("dfs.adls.oauth2.credential", "NwV_q37.tM.c-ghtWavL1W9-Hp43cN3Jmf")
+spark.conf.set("dfs.adls.oauth2.refresh.url", "https://login.chinacloudapi.cn/2f72f96c-65f9-4a6a-b166-dd61493e4b2e/oauth2/token")
+
+dbutils.fs.ls("/mnt/datalake1demo/tables/")
 
 # COMMAND ----------
 
