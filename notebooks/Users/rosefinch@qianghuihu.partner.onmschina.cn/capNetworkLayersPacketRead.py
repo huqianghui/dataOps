@@ -18,32 +18,6 @@ if "split-cap/" not in [file.name for file in dbutils.fs.ls("/mnt")]:
 
 # COMMAND ----------
 
-from scapy.all import *
-import sys
-import math
-from collections import defaultdict
-import numpy as np
-
-allPackets = rdpcap("/dbfs/mnt/split-cap/test-split_00000_20211021170719.cap")
-
-# COMMAND ----------
-
-layers=3
-lenght=len(allPackets)
-
-# COMMAND ----------
-
-lenght = 1
-
-for index in range(lenght):
-    for layerNo in range(layers):
-        for field in allPackets[0].getlayer(layerNo).fields:
-            fieldValue = getattr(allPackets[index][layerNo], field)
-            print("field: " + str(field) + " value: " + str(fieldValue))
-
-
-# COMMAND ----------
-
 # import pyspark class Row from module sql
 from pyspark.sql import *
 from pyspark.sql.types import *
@@ -67,7 +41,7 @@ schema = StructType([StructField("mac_dst",StringType(),False),
                     StructField("sport",IntegerType(),False),
                     StructField("dport",IntegerType(),False),
                     StructField("seq",IntegerType(),False), 
-                    StructField("ack",IntegerType(),False),
+                    StructField("ack",LongType(),False),
                     StructField("dataofs",IntegerType(),False),
                     StructField("tcp_reserved",IntegerType(),False),
                     StructField("tcp_flags",StringType(),False),
@@ -86,23 +60,92 @@ capDataframe.show()
 
 # COMMAND ----------
 
-configs = {"dfs.adls.oauth2.access.token.provider.type" : "ClientCredential",
-  "dfs.adls.oauth2.client.id" : "681d9f52-5c95-4f5f-921d-b75ac0128acc",
-  "dfs.adls.oauth2.credential" : "NwV_q37.tM.c-ghtWavL1W9-Hp43cN3Jmf",
-  "dfs.adls.oauth2.refresh.url" : "https://login.chinacloudapi.cn/2f72f96c-65f9-4a6a-b166-dd61493e4b2e/oauth2/token"}
+configs = {"fs.azure.account.auth.type": "OAuth",
+          "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
+          "fs.azure.account.oauth2.client.id": "681d9f52-5c95-4f5f-921d-b75ac0128acc",
+          "fs.azure.account.oauth2.client.secret": "NwV_q37.tM.c-ghtWavL1W9-Hp43cN3Jmf",
+          "fs.azure.account.oauth2.client.endpoint": "https://login.partner.microsoftonline.cn/2f72f96c-65f9-4a6a-b166-dd61493e4b2e/oauth2/token"}
 
-if "datalake1demo/" not in [file.name for file in dbutils.fs.ls("/mnt")]:
-    dbutils.fs.mount(
-      source = "adl://datalake1demo.azuredatalakestore.net/",
-      mount_point = "/mnt/datalake1demo",
-      extra_configs = configs)
+if "datalake1demo1111/"  in [file.name for file in dbutils.fs.ls("/mnt")]:
+    dbutils.fs.unmount("/mnt/datalake1demo1111")
     
-spark.conf.set("dfs.adls.oauth2.access.token.provider.type", "ClientCredential")
-spark.conf.set("dfs.adls.oauth2.client.id", "681d9f52-5c95-4f5f-921d-b75ac0128acc")
-spark.conf.set("dfs.adls.oauth2.credential", "NwV_q37.tM.c-ghtWavL1W9-Hp43cN3Jmf")
-spark.conf.set("dfs.adls.oauth2.refresh.url", "https://login.chinacloudapi.cn/2f72f96c-65f9-4a6a-b166-dd61493e4b2e/oauth2/token")
-
-dbutils.fs.ls("/mnt/datalake1demo/tables/")
+# Optionally, you can add <directory-name> to the source URI of your mount point.
+dbutils.fs.mount(
+  source = "abfss://tables@datalake1demo.dfs.core.chinacloudapi.cn/",
+  mount_point = "/mnt/datalake1demo1111",
+  extra_configs = configs)
 
 # COMMAND ----------
 
+dbutils.fs.ls("/mnt/datalake1demo1111")
+
+# COMMAND ----------
+
+# MAGIC %fs 
+# MAGIC ls /mnt/datalake1demo1111/deltatables
+
+# COMMAND ----------
+
+capDataframe.write.format("delta").mode("overwrite").saveAsTable("default.packets")
+
+# COMMAND ----------
+
+type(capDataframe)
+
+# COMMAND ----------
+
+from scapy.all import *
+import sys
+import math
+from collections import defaultdict
+import numpy as np
+
+layers=3
+
+# COMMAND ----------
+
+import pandas as pd
+# import pyspark class Row from module sql
+from pyspark.sql import *
+from pyspark.sql.types import *
+
+allPackets = rdpcap("/dbfs/FileStore/sample/first5_test.cap")
+lenght=len(allPackets)
+
+lenght=1
+elementNum=0;
+spark.conf.set("spark.sql.execution.arrow.enabled", "false")
+
+
+for index in range(lenght):
+    elementValues = []
+    for layerNo in range(layers):
+        for field in allPackets[0].getlayer(layerNo).fields:
+            fieldValue = getattr(allPackets[index][layerNo], field)
+            if(type(fieldValue) == scapy.fields.FlagValue):
+                elementValues.append(str(fieldValue))
+            else :
+                elementValues.append(fieldValue)
+    df = pd.DataFrame(elementValues).T.apply(lambda x:x.apply(lambda x: [""] if x == [] else x))
+    sqlDf=spark.createDataFrame(df, schema)
+    sqlDf.write.mode("append").save("/mnt/datalake1demo1111/deltatables/packets");
+    
+
+# COMMAND ----------
+
+df = spark.read.format("delta").load("/mnt/datalake1demo1111/deltatables/packets")
+df.show()
+
+# COMMAND ----------
+
+# Create the table.
+spark.sql("DROP TABLE default.packets")
+
+spark.sql("CREATE TABLE " + "default.packets" + " USING DELTA LOCATION '" + "/mnt/datalake1demo1111/deltatables/packets" + "'")
+
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC 
+# MAGIC select * from default.packets
