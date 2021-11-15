@@ -4,17 +4,16 @@ storage_account_key = "2NzN84l5kqVO33nZIrUd67AWuTw3CIHzdFZSKBPzIOKXXzGHgMDdWGj2Q
 container = "split-cap"
 spark.conf.set("fs.azure.account.key.{0}.blob.core.windows.net".format(storage_account_name), storage_account_key)
 
-if "split-cap/" not in [file.name for file in dbutils.fs.ls("/mnt")]:
+if "split-cap111/" not in [file.name for file in dbutils.fs.ls("/mnt")]:
     dbutils.fs.mount(
       source = "wasbs://{0}@{1}.blob.core.chinacloudapi.cn".format(container, storage_account_name),
-      mount_point = "/mnt/{0}".format(container),
+      mount_point = "/mnt/split-cap111/",
       extra_configs = {"fs.azure.account.key.{0}.blob.core.chinacloudapi.cn".format(storage_account_name): storage_account_key}
      )
 
 # COMMAND ----------
 
-# MAGIC %fs
-# MAGIC ls /mnt/split-cap
+dbutils.fs.ls("/mnt/split-cap111/")
 
 # COMMAND ----------
 
@@ -40,7 +39,7 @@ schema = StructType([StructField("mac_dst",StringType(),False),
                     StructField("ip_dst",StringType(),False),
                     StructField("sport",IntegerType(),False),
                     StructField("dport",IntegerType(),False),
-                    StructField("seq",IntegerType(),False), 
+                    StructField("seq",LongType(),False), 
                     StructField("ack",LongType(),False),
                     StructField("dataofs",IntegerType(),False),
                     StructField("tcp_reserved",IntegerType(),False),
@@ -66,18 +65,19 @@ configs = {"fs.azure.account.auth.type": "OAuth",
           "fs.azure.account.oauth2.client.secret": "NwV_q37.tM.c-ghtWavL1W9-Hp43cN3Jmf",
           "fs.azure.account.oauth2.client.endpoint": "https://login.partner.microsoftonline.cn/2f72f96c-65f9-4a6a-b166-dd61493e4b2e/oauth2/token"}
 
-if "datalake1demo1111/"  in [file.name for file in dbutils.fs.ls("/mnt")]:
-    dbutils.fs.unmount("/mnt/datalake1demo1111")
+if "datalake1demo1111/"  not in [file.name for file in dbutils.fs.ls("/mnt")]:
+    dbutils.fs.mount(
+    source = "abfss://tables@datalake1demo.dfs.core.chinacloudapi.cn/",
+    mount_point = "/mnt/datalake1demo1111",
+    extra_configs = configs)
     
 # Optionally, you can add <directory-name> to the source URI of your mount point.
-dbutils.fs.mount(
-  source = "abfss://tables@datalake1demo.dfs.core.chinacloudapi.cn/",
-  mount_point = "/mnt/datalake1demo1111",
-  extra_configs = configs)
+
 
 # COMMAND ----------
 
-dbutils.fs.ls("/mnt/datalake1demo1111")
+#dbutils.fs.ls("/mnt/datalake1demo1111")
+dbutils.fs.rm("/mnt/datalake1demo1111/deltatables",True)
 
 # COMMAND ----------
 
@@ -87,10 +87,6 @@ dbutils.fs.ls("/mnt/datalake1demo1111")
 # COMMAND ----------
 
 capDataframe.write.format("delta").mode("overwrite").saveAsTable("default.packets")
-
-# COMMAND ----------
-
-type(capDataframe)
 
 # COMMAND ----------
 
@@ -109,26 +105,25 @@ import pandas as pd
 from pyspark.sql import *
 from pyspark.sql.types import *
 
-allPackets = rdpcap("/dbfs/FileStore/sample/first5_test.cap")
-lenght=len(allPackets)
 
-lenght=1
-elementNum=0;
-spark.conf.set("spark.sql.execution.arrow.enabled", "false")
-
-
-for index in range(lenght):
-    elementValues = []
-    for layerNo in range(layers):
-        for field in allPackets[0].getlayer(layerNo).fields:
-            fieldValue = getattr(allPackets[index][layerNo], field)
-            if(type(fieldValue) == scapy.fields.FlagValue):
-                elementValues.append(str(fieldValue))
-            else :
-                elementValues.append(fieldValue)
-    df = pd.DataFrame(elementValues).T.apply(lambda x:x.apply(lambda x: [""] if x == [] else x))
+for fileName in [file.name for file in dbutils.fs.ls("/mnt/split-cap/")] :
+    allPackets = rdpcap("/dbfs/mnt/split-cap/" + fileName)
+    lenght=len(allPackets)
+    elementList=[]
+    
+    for index in range(lenght):
+        elementValues = []
+        for layerNo in range(layers):
+            for field in allPackets[0].getlayer(layerNo).fields:
+                fieldValue = getattr(allPackets[index][layerNo], field)
+                if(type(fieldValue) == scapy.fields.FlagValue):
+                    elementValues.append(str(fieldValue))
+                else :
+                    elementValues.append(fieldValue)
+        elementList.append(elementValues)
+    df = pd.DataFrame(elementList).apply(lambda x:x.apply(lambda x: [""] if x == [] else x))
     sqlDf=spark.createDataFrame(df, schema)
-    sqlDf.write.mode("append").save("/mnt/datalake1demo1111/deltatables/packets");
+    sqlDf.write.mode("append").option("overwriteSchema", "true").save("/mnt/datalake1demo1111/deltatables/packets");
     
 
 # COMMAND ----------
@@ -143,9 +138,24 @@ spark.sql("DROP TABLE default.packets")
 
 spark.sql("CREATE TABLE " + "default.packets" + " USING DELTA LOCATION '" + "/mnt/datalake1demo1111/deltatables/packets" + "'")
 
+#spark.sql('OPTIMIZE default.packets')
+#spark.sql('VACUUM default.packets')
 
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC 
+# MAGIC select count(1) from default.packets
+
+# COMMAND ----------
+
+spark.sql('OPTIMIZE default.packets')
+spark.sql('VACUUM default.packets')
+
+# COMMAND ----------
+
+# MAGIC %sql
 # MAGIC select * from default.packets
+
+# COMMAND ----------
+
+spark.sql("CREATE TABLE " + "default.packetRecords" + " USING DELTA LOCATION '" + "/mnt/datalake1demo1111/deltatables/packetRecords" + "'")
