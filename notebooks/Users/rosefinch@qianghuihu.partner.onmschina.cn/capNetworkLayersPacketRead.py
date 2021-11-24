@@ -100,6 +100,12 @@ layers=3
 
 # COMMAND ----------
 
+for item in sc.getConf().getAll():
+    print(item)
+
+
+# COMMAND ----------
+
 import pandas as pd
 # import pyspark class Row from module sql
 from pyspark.sql import *
@@ -143,8 +149,42 @@ spark.sql("CREATE TABLE " + "default.packets" + " USING DELTA LOCATION '" + "/mn
 
 # COMMAND ----------
 
+
+
+# COMMAND ----------
+
 # MAGIC %sql
 # MAGIC select count(1) from default.packets
+
+# COMMAND ----------
+
+df = spark.sql("select * from default.packets")
+
+# COMMAND ----------
+
+spark.table("default.packets").explain(mode='cost')
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC 
+# MAGIC ANALYZE TABLE default.hivePackets COMPUTE STATISTICS;
+# MAGIC 
+# MAGIC DESCRIBE TABLE EXTENDED default.hivePackets;
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC 
+# MAGIC explain COST select * from default.packets 
+
+# COMMAND ----------
+
+df.write.mode("overwrite").saveAsTable("default.hivePackets")
+
+# COMMAND ----------
+
+display(df.groupBy("ip_dst","dport").sum("len"))
 
 # COMMAND ----------
 
