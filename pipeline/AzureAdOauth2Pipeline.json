@@ -20,7 +20,8 @@
 					"url": "https://az-keyvault.vault.azure.cn/secrets/clientId/9df32a54798c4ac581d12f0414458a75",
 					"method": "GET",
 					"authentication": {
-						"type": "MSI"
+						"type": "MSI",
+						"resource": "https://vault.azure.cn"
 					}
 				}
 			}
