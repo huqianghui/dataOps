@@ -24,6 +24,28 @@
 						"resource": "https://vault.azure.cn"
 					}
 				}
+			},
+			{
+				"name": "AKVClientSecret",
+				"description": "get client secret from azure key vault",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://az-keyvault.vault.azure.cn/secrets/clientSecret/7c67ff3cc83f40fab311276046d65bbc?api-version=7.0",
+					"method": "GET",
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://vault.azure.cn"
+					}
+				}
 			}
 		],
 		"annotations": []
