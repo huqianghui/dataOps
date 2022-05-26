@@ -1,0 +1,27 @@
+{
+	"name": "AzureAdOauth2Pipeline",
+	"properties": {
+		"description": "oauth2 for restful api workflow",
+		"activities": [
+			{
+				"name": "AKVClientId",
+				"description": "get client id from azure key vault",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://az-keyvault.vault.azure.cn/secrets/clientId/9df32a54798c4ac581d12f0414458a75",
+					"method": "GET"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
