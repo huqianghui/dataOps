@@ -17,6 +17,9 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://mlaztest6197607535.dfs.core.chinacloudapi.cn"
 		},
+		"AADEndpoint_properties_typeProperties_url": {
+			"value": "https://login.partner.microsoftonline.cn/2f72f96c-65f9-4a6a-b166-dd61493e4b2e/v2.0/.well-known/openid-configuration"
+		},
 		"containerUri": {
 			"value": ""
 		},

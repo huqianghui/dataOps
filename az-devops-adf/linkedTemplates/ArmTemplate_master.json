@@ -23,6 +23,10 @@
 			"type": "string",
 			"defaultValue": "https://mlaztest6197607535.dfs.core.chinacloudapi.cn"
 		},
+		"AADEndpoint_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://login.partner.microsoftonline.cn/2f72f96c-65f9-4a6a-b166-dd61493e4b2e/v2.0/.well-known/openid-configuration"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -61,6 +65,9 @@
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AADEndpoint_properties_typeProperties_url": {
+						"value": "[parameters('AADEndpoint_properties_typeProperties_url')]"
 					}
 				}
 			},
