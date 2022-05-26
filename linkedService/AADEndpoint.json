@@ -1,0 +1,13 @@
+{
+	"name": "AADEndpoint",
+	"properties": {
+		"description": "AADEndpoint",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://login.partner.microsoftonline.cn/2f72f96c-65f9-4a6a-b166-dd61493e4b2e/v2.0/.well-known/openid-configuration",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
