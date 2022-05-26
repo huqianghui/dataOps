@@ -81,8 +81,19 @@
 					},
 					"body": "grant_type=client_credentials&scope=https://graph.microsoft.com/.default&client_id=@{activity('AKVClientId').output.value}&client_secret=@{activity('AKVClientSecret').output.value}"
 				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": []
 			}
 		],
+		"variables": {
+			"access_token": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
