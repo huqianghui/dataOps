@@ -83,10 +83,21 @@
 				}
 			},
 			{
-				"name": "Set variable1",
+				"name": "Set Access Token",
 				"type": "SetVariable",
-				"dependsOn": [],
-				"userProperties": []
+				"dependsOn": [
+					{
+						"activity": "AzureAdLogin",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "access_token",
+					"value": "@{activity('AzureAdLogin').output. access_token}"
+				}
 			}
 		],
 		"variables": {
