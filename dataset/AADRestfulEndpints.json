@@ -1,0 +1,12 @@
+{
+	"name": "AADRestfulEndpints",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AADEndpoint",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
