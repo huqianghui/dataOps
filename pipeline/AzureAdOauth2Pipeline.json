@@ -53,13 +53,13 @@
 				"type": "WebActivity",
 				"dependsOn": [
 					{
-						"activity": "AKVClientId",
+						"activity": "AKVClientSecret",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "AKVClientSecret",
+						"activity": "client_id",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -81,8 +81,34 @@
 					},
 					"body": "grant_type=client_credentials&scope=https://graph.microsoft.com/.default&client_id=815e0648-7584-4ca4-a14a-e213339ba4e9&client_secret=b_c8Q~hVgmAU4IymyN1_Ty_rTRf9IoG8v3O6Ccac"
 				}
+			},
+			{
+				"name": "client_id",
+				"description": "client id",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "AKVClientId",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "client_id",
+					"value": "@activity('AKVClientId').output. value"
+				}
 			}
 		],
+		"variables": {
+			"client_id": {
+				"type": "String"
+			},
+			"client_secret": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
