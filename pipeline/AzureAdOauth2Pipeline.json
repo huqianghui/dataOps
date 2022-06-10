@@ -18,6 +18,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"url": "https://az-keyvault.vault.azure.cn/secrets/clientId/9df32a54798c4ac581d12f0414458a75?api-version=7.0",
+					"connectVia": {
+						"referenceName": "AutoResolveIntegrationRuntime",
+						"type": "IntegrationRuntimeReference"
+					},
 					"method": "GET",
 					"authentication": {
 						"type": "MSI",
@@ -39,11 +43,15 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://az-keyvault.vault.azure.cn/secrets/clientSecret/7c67ff3cc83f40fab311276046d65bbc?api-version=7.0",
+					"url": "https://githubcreditial.vault.azure.net/secrets/clientId/6bc4ca737c6043b4b967bf04017d27dc?api-version=7.0",
+					"connectVia": {
+						"referenceName": "AutoResolveIntegrationRuntime",
+						"type": "IntegrationRuntimeReference"
+					},
 					"method": "GET",
 					"authentication": {
 						"type": "MSI",
-						"resource": "https://vault.azure.cn"
+						"resource": "https://vault.azure.com"
 					}
 				}
 			},
@@ -75,11 +83,18 @@
 				"userProperties": [],
 				"typeProperties": {
 					"url": "https://login.microsoftonline.com/consumers/oauth2/v2.0/token",
+					"connectVia": {
+						"referenceName": "AutoResolveIntegrationRuntime",
+						"type": "IntegrationRuntimeReference"
+					},
 					"method": "POST",
 					"headers": {
 						"Content-Type": "application/x-www-form-urlencoded"
 					},
-					"body": "grant_type=client_credentials&scope=https://graph.microsoft.com/.default&client_id=@{activity('AKVClientId').output.value}&client_secret=@{activity('AKVClientSecret').output.value}"
+					"body": {
+						"value": "grant_type=client_credentials&scope=https://graph.microsoft.com/.default&client_id=@{activity('AKVClientId').output.value}&client_secret=@{activity('AKVClientSecret').output.value}",
+						"type": "Expression"
+					}
 				}
 			},
 			{
@@ -96,7 +111,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "access_token",
-					"value": "@{activity('AzureAdLogin').output. access_token}"
+					"value": {
+						"value": "@{activity('AzureAdLogin').output. access_token}",
+						"type": "Expression"
+					}
 				}
 			},
 			{
@@ -126,7 +144,10 @@
 						"requestInterval": "00.00:00:00.010",
 						"requestMethod": "GET",
 						"additionalHeaders": {
-							"access_token": "@{variables('access_token')}"
+							"access_token": {
+								"value": "@{variables('access_token')}",
+								"type": "Expression"
+							}
 						},
 						"paginationRules": {
 							"supportRFC5988": "true"
