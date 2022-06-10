@@ -17,7 +17,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://az-keyvault.vault.azure.cn/secrets/clientId/9df32a54798c4ac581d12f0414458a75?api-version=7.0",
+					"url": "https://githubcreditial.vault.azure.net/secrets/clientId/6bc4ca737c6043b4b967bf04017d27dc?api-version=7.0",
 					"connectVia": {
 						"referenceName": "AutoResolveIntegrationRuntime",
 						"type": "IntegrationRuntimeReference"
@@ -25,7 +25,7 @@
 					"method": "GET",
 					"authentication": {
 						"type": "MSI",
-						"resource": "https://vault.azure.cn"
+						"resource": "https://vault.azure.com"
 					}
 				}
 			},
