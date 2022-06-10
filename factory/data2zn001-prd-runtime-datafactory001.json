@@ -1,0 +1,9 @@
+{
+	"name": "data2zn001-prd-runtime-datafactory001",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ea5776f9-e81f-4364-a3e5-0cc8f72f0e88",
+		"tenantId": "6455f0e9-5908-44ea-acbc-b9f8312f27f5"
+	}
+}
