@@ -1,7 +1,0 @@
-{
-	"name": "dataLandingZoneShir-data2zn001-prd-shir001",
-	"properties": {
-		"type": "SelfHosted",
-		"description": "Data Landing Zone - Self Hosted Integration Runtime running on data2zn001-prd-shir001"
-	}
-}
