@@ -43,7 +43,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://githubcreditial.vault.azure.net/secrets/clientSecret/fa628879657f4a7092ebbc251edfb117?api-version=7.0",
+					"url": "https://az-keyvault.vault.azure.cn/secrets/clientSecret/7c67ff3cc83f40fab311276046d65bbc?api-version=7.0",
 					"connectVia": {
 						"referenceName": "AutoResolveIntegrationRuntime",
 						"type": "IntegrationRuntimeReference"
