@@ -1,0 +1,156 @@
+{
+	"name": "AccountingFrameworkStandard",
+	"properties": {
+		"Name": "AccountingFrameworkStandard",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Database1",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AccountingFrameworkId",
+					"Description": "The unique identifier of an Accounting Framework.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard",
+						"Name": "AccountingFrameworkId"
+					}
+				},
+				{
+					"Name": "AccountingFrameworkStandardId",
+					"Description": "The unique identifier of an Accounting Framework Standard.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard",
+						"Name": "AccountingFrameworkStandardId"
+					}
+				},
+				{
+					"Name": "AccountingFrameworkStandardName",
+					"Description": "The name of an Accounting Framework Standard.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard",
+						"Name": "AccountingFrameworkStandardName"
+					}
+				},
+				{
+					"Name": "AccountingFrameworkStandardDescription",
+					"Description": "The description of an Accounting Framework Standard.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard",
+						"Name": "AccountingFrameworkStandardDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "b18cf325-77f4-46f9-9f29-577cc31f7d8a",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/AccountingFrameworkStandard",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/AccountingFrameworkStandard",
+				"Properties": {
+					"LinkedServiceName": "demo-ws-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AccountingFrameworkId\":{\"entity\":\"AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard\",\"name\":\"AccountingFrameworkId\"},\"AccountingFrameworkStandardId\":{\"entity\":\"AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard\",\"name\":\"AccountingFrameworkStandardId\"},\"AccountingFrameworkStandardName\":{\"entity\":\"AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard\",\"name\":\"AccountingFrameworkStandardName\"},\"AccountingFrameworkStandardDescription\":{\"entity\":\"AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard\",\"name\":\"AccountingFrameworkStandardDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AccountingFrameworkStandard\",\"path\":\"AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard\"},\"description\":\"Each Accounting Framework consists of a set of standards / rules / interpretations. These standards guide the organization in how financial transactions should be reflected in an organization's accounting system and how an organization should prepare their financial reporting.\\n\\nEach Accounting Framework has its own set of standards that must be followed. \\n\\nThe International Financial Reporting Standards (IFRS), one of many different accounting frameworks, is becoming increasingly used throughout the world. For this reason we have included its set of standards as way of an example. The Standards and Interpretations that make up the IFRS include:\\n\\nEx:\\nStandard/ Interpretation    Title\\n- IFRS 1                    First-time Adoption of International Financial Reporting Standards\\n- IFRS 2                    Share-based Payment\\n- IFRS 3                    Business Combinations\\n- IFRS 4                    Insurance Contracts\\n- IFRS 5                    Non-current Assets Held for Sale and Discontinued Operations\\n- IFRS 6                    Exploration for and Evaluation of Mineral Resources\\n- IFRS 7(2)                 Financial Instruments: Disclosures (entity has not yet adopted IFRS 9)\\n- IFRS 7(2)                 Financial Instruments: Disclosures (entity has adopted IFRS 9)\\n- IFRS 8                    Operating Segments\\n- IFRS 9                    Financial Instruments \\n- IAS 1                     Presentation of Financial Statements\\n- IAS 2                     Inventories\\n- IAS 7                     Statement of Cash Flows\\n- IAS 8                     Accounting Policies, Changes in Accounting Estimates and Errors\\n- IAS 10                    Events after the Reporting Period\\n- IAS 11                    Construction Contracts\\n- IAS 12                    Income Taxes\\n- IAS 16                    Property, Plant and Equipment\\n- IAS 17                    Leases\\n- IAS 18                    Revenue\\n- IAS 19                    Employee Benefits\\n- IAS 20                    Accounting for Government Grants and Disclosure of Government Assistance\\n- IAS 21                    The Effects of Changes in Foreign Exchange Rates\\n- IAS 23                    Borrowing Costs\\n- IAS 24(3)                 Related Party Disclosures\\n- IAS 24(2009)(3)           Related Party Disclosures\\n- IAS 26                    Accounting and Reporting by Retirement Benefit Plans\\n- IAS 27                    Consolidated and Separate Financial Statements \\n- IAS 28                    Investments in Associates\\n- IAS 29                    Financial Reporting in Hyperinflationary Economies\\n- IAS 31                    Interests in Joint Ventures\\n- IAS 32                    Financial Instruments: Presentation\\n- IAS 33                    Earnings Per Share\\n- IAS 34                    Interim Financial Reporting\\n- IAS 36                    Impairment of Assets\\n- IAS 37                    Provisions, Contingent Liabilities and Contingent Assets\\n- IAS 38                    Intangible Assets\\n- IAS 39                    Financial Instruments: Recognition and Measurement\\n- IAS 40                    Investment Property\\n- IAS 41                    Agriculture \\n- IFRIC 1                   Changes in Existing Decommissioning, Restoration and Similar Liabilities\\n- IFRIC 2                   Members' Shares in Co-operative Entities and Similar Instruments \\n- IFRIC 4                   Determining whether an Arrangement contains a Lease\\n- IFRIC 5                   Rights to Interests arising from Decommissioning, Restoration and Environmental Rehabilitation Funds\\n- IFRIC 6                   Liabilities arising from Participating in a Specific Market - Waste Electrical and Electronic Equipment\\n- IFRIC 7                   Applying the Restatement Approach under IAS 29 Financial Reporting in Hyperinflationary Economies\\n- IFRIC 9                   Reassessment of Embedded Derivatives\\n- IFRIC 10                  Interim Financial Reporting and Impairment\\n- IFRIC 12                  Service Concession Arrangements\\n- IFRIC 13                  Customer Loyalty Programmes\\n- IFRIC 14                  IAS 19 - The Limit on a Defined Benefit Asset, Minimum Funding Requirements and their Interaction\\n- IFRIC 15                  Agreements for the Construction of Real Estate\\n- IFRIC 16                  Hedges of a Net Investment in a Foreign Operation\\n- IFRIC 17                  Distributions of Non-Cash Assets to Owners\\n- IFRIC 18                  Transfers of Assets from Customers\\n- IFRIC 19                  Extinguishing Financial Liabilities with Equity Instruments\\n- SIC-7                      Introduction of the Euro\\n- SIC-10                    Government Assistance - No Specific Relation to Operating Activities\\n- SIC-12                    Consolidation - Special Purpose Entities\\n- SIC-13                    Jointly Controlled Entities - Non-Monetary Contributions by Venturers\\n- SIC-15                    Operating Leases - Incentives\\n- SIC-21                    Income Taxes - Recovery of Revalued Non-Depreciable Assets\\n- SIC-25                    Income Taxes - Changes in the Tax Status of an Entity or its Shareholders\\n- SIC-27                    Evaluating the Substance of Transactions Involving the Legal Form of a Lease\\n- SIC-29                    Service Concession Arrangements: Disclosures\\n- SIC-31                    Revenue - Barter Transactions involving Advertising Services\\n- SIC-32                    Intangible Assets - Web Site Costs\",\"primaryKey\":[\"AccountingFrameworkId\",\"AccountingFrameworkStandardId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard\",\"name\":\"AccountingFrameworkId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Accounting Framework.\",\"isNullable\":false,\"name\":\"AccountingFrameworkId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard\",\"name\":\"AccountingFrameworkStandardId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Accounting Framework Standard.\",\"isNullable\":false,\"name\":\"AccountingFrameworkStandardId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard\",\"name\":\"AccountingFrameworkStandardName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Accounting Framework Standard.\",\"isNullable\":true,\"name\":\"AccountingFrameworkStandardName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingFrameworkStandard.cdm.json/AccountingFrameworkStandard\",\"name\":\"AccountingFrameworkStandardDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Accounting Framework Standard.\",\"isNullable\":true,\"name\":\"AccountingFrameworkStandardDescription\"}]}}}",
+			"Description": "Each Accounting Framework consists of a set of standards / rules / interpretations. These standards guide the organization in how financial transactions should be reflected in an organization's accounting system and how an organization should prepare their financial reporting.\n\nEach Accounting Framework has its own set of standards that must be followed. \n\nThe International Financial Reporting Standards (IFRS), one of many different accounting frameworks, is becoming increasingly used throughout the world. For this reason we have included its set of standards as way of an example. The Standards and Interpretations that make up the IFRS include:\n\nEx:\nStandard/ Interpretation    Title\n- IFRS 1                    First-time Adoption of International Financial Reporting Standards\n- IFRS 2                    Share-based Payment\n- IFRS 3                    Business Combinations\n- IFRS 4                    Insurance Contracts\n- IFRS 5                    Non-current Assets Held for Sale and Discontinued Operations\n- IFRS 6                    Exploration for and Evaluation of Mineral Resources\n- IFRS 7(2)                 Financial Instruments: Disclosures (entity has not yet adopted IFRS 9)\n- IFRS 7(2)                 Financial Instruments: Disclosures (entity has adopted IFRS 9)\n- IFRS 8                    Operating Segments\n- IFRS 9                    Financial Instruments \n- IAS 1                     Presentation of Financial Statements\n- IAS 2                     Inventories\n- IAS 7                     Statement of Cash Flows\n- IAS 8                     Accounting Policies, Changes in Accounting Estimates and Errors\n- IAS 10                    Events after the Reporting Period\n- IAS 11                    Construction Contracts\n- IAS 12                    Income Taxes\n- IAS 16                    Property, Plant and Equipment\n- IAS 17                    Leases\n- IAS 18                    Revenue\n- IAS 19                    Employee Benefits\n- IAS 20                    Accounting for Government Grants and Disclosure of Government Assistance\n- IAS 21                    The Effects of Changes in Foreign Exchange Rates\n- IAS 23                    Borrowing Costs\n- IAS 24(3)                 Related Party Disclosures\n- IAS 24(2009)(3)           Related Party Disclosures\n- IAS 26                    Accounting and Reporting by Retirement Benefit Plans\n- IAS 27                    Consolidated and Separate Financial Statements \n- IAS 28                    Investments in Associates\n- IAS 29                    Financial Reporting in Hyperinflationary Economies\n- IAS 31                    Interests in Joint Ventures\n- IAS 32                    Financial Instruments: Presentation\n- IAS 33                    Earnings Per Share\n- IAS 34                    Interim Financial Reporting\n- IAS 36                    Impairment of Assets\n- IAS 37                    Provisions, Contingent Liabilities and Contingent Assets\n- IAS 38                    Intangible Assets\n- IAS 39                    Financial Instruments: Recognition and Measurement\n- IAS 40                    Investment Property\n- IAS 41                    Agriculture \n- IFRIC 1                   Changes in Existing Decommissioning, Restoration and Similar Liabilities\n- IFRIC 2                   Members' Shares in Co-operative Entities and Similar Instruments \n- IFRIC 4                   Determining whether an Arrangement contains a Lease\n- IFRIC 5                   Rights to Interests arising from Decommissioning, Restoration and Environmental Rehabilitation Funds\n- IFRIC 6                   Liabilities arising from Participating in a Specific Market - Waste Electrical and Electronic Equipment\n- IFRIC 7                   Applying the Restatement Approach under IAS 29 Financial Reporting in Hyperinflationary Economies\n- IFRIC 9                   Reassessment of Embedded Derivatives\n- IFRIC 10                  Interim Financial Reporting and Impairment\n- IFRIC 12                  Service Concession Arrangements\n- IFRIC 13                  Customer Loyalty Programmes\n- IFRIC 14                  IAS 19 - The Limit on a Defined Benefit Asset, Minimum Funding Requirements and their Interaction\n- IFRIC 15                  Agreements for the Construction of Real Estate\n- IFRIC 16                  Hedges of a Net Investment in a Foreign Operation\n- IFRIC 17                  Distributions of Non-Cash Assets to Owners\n- IFRIC 18                  Transfers of Assets from Customers\n- IFRIC 19                  Extinguishing Financial Liabilities with Equity Instruments\n- SIC-7                      Introduction of the Euro\n- SIC-10                    Government Assistance - No Specific Relation to Operating Activities\n- SIC-12                    Consolidation - Special Purpose Entities\n- SIC-13                    Jointly Controlled Entities - Non-Monetary Contributions by Venturers\n- SIC-15                    Operating Leases - Incentives\n- SIC-21                    Income Taxes - Recovery of Revalued Non-Depreciable Assets\n- SIC-25                    Income Taxes - Changes in the Tax Status of an Entity or its Shareholders\n- SIC-27                    Evaluating the Substance of Transactions Involving the Legal Form of a Lease\n- SIC-29                    Service Concession Arrangements: Disclosures\n- SIC-31                    Revenue - Barter Transactions involving Advertising Services\n- SIC-32                    Intangible Assets - Web Site Costs",
+			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "AccountingFrameworkId,AccountingFrameworkStandardId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AccountingFrameworkId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AccountingFrameworkStandardId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AccountingFrameworkStandardName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AccountingFrameworkStandardDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "14bc6bb7-b9dd-46fc-99b2-f78109d519fa",
+		"Description": "Each Accounting Framework consists of a set of standards / rules / interpretations. These standards guide the organization in how financial transactions should be reflected in an organization's accounting system and how an organization should prepare their financial reporting.\n\nEach Accounting Framework has its own set of standards that must be followed. \n\nThe International Financial Reporting Standards (IFRS), one of many different accounting frameworks, is becoming increasingly used throughout the world. For this reason we have included its set of standards as way of an example. The Standards and Interpretations that make up the IFRS include:\n\nEx:\nStandard/ Interpretation    Title\n- IFRS 1                    First-time Adoption of International Financial Reporting Standards\n- IFRS 2                    Share-based Payment\n- IFRS 3                    Business Combinations\n- IFRS 4                    Insurance Contracts\n- IFRS 5                    Non-current Assets Held for Sale and Discontinued Operations\n- IFRS 6                    Exploration for and Evaluation of Mineral Resources\n- IFRS 7(2)                 Financial Instruments: Disclosures (entity has not yet adopted IFRS 9)\n- IFRS 7(2)                 Financial Instruments: Disclosures (entity has adopted IFRS 9)\n- IFRS 8                    Operating Segments\n- IFRS 9                    Financial Instruments \n- IAS 1                     Presentation of Financial Statements\n- IAS 2                     Inventories\n- IAS 7                     Statement of Cash Flows\n- IAS 8                     Accounting Policies, Changes in Accounting Estimates and Errors\n- IAS 10                    Events after the Reporting Period\n- IAS 11                    Construction Contracts\n- IAS 12                    Income Taxes\n- IAS 16                    Property, Plant and Equipment\n- IAS 17                    Leases\n- IAS 18                    Revenue\n- IAS 19                    Employee Benefits\n- IAS 20                    Accounting for Government Grants and Disclosure of Government Assistance\n- IAS 21                    The Effects of Changes in Foreign Exchange Rates\n- IAS 23                    Borrowing Costs\n- IAS 24(3)                 Related Party Disclosures\n- IAS 24(2009)(3)           Related Party Disclosures\n- IAS 26                    Accounting and Reporting by Retirement Benefit Plans\n- IAS 27                    Consolidated and Separate Financial Statements \n- IAS 28                    Investments in Associates\n- IAS 29                    Financial Reporting in Hyperinflationary Economies\n- IAS 31                    Interests in Joint Ventures\n- IAS 32                    Financial Instruments: Presentation\n- IAS 33                    Earnings Per Share\n- IAS 34                    Interim Financial Reporting\n- IAS 36                    Impairment of Assets\n- IAS 37                    Provisions, Contingent Liabilities and Contingent Assets\n- IAS 38                    Intangible Assets\n- IAS 39                    Financial Instruments: Recognition and Measurement\n- IAS 40                    Investment Property\n- IAS 41                    Agriculture \n- IFRIC 1                   Changes in Existing Decommissioning, Restoration and Similar Liabilities\n- IFRIC 2                   Members' Shares in Co-operative Entities and Similar Instruments \n- IFRIC 4                   Determining whether an Arrangement contains a Lease\n- IFRIC 5                   Rights to Interests arising from Decommissioning, Restoration and Environmental Rehabilitation Funds\n- IFRIC 6                   Liabilities arising from Participating in a Specific Market - Waste Electrical and Electronic Equipment\n- IFRIC 7                   Applying the Restatement Approach under IAS 29 Financial Reporting in Hyperinflationary Economies\n- IFRIC 9                   Reassessment of Embedded Derivatives\n- IFRIC 10                  Interim Financial Reporting and Impairment\n- IFRIC 12                  Service Concession Arrangements\n- IFRIC 13                  Customer Loyalty Programmes\n- IFRIC 14                  IAS 19 - The Limit on a Defined Benefit Asset, Minimum Funding Requirements and their Interaction\n- IFRIC 15                  Agreements for the Construction of Real Estate\n- IFRIC 16                  Hedges of a Net Investment in a Foreign Operation\n- IFRIC 17                  Distributions of Non-Cash Assets to Owners\n- IFRIC 18                  Transfers of Assets from Customers\n- IFRIC 19                  Extinguishing Financial Liabilities with Equity Instruments\n- SIC-7                      Introduction of the Euro\n- SIC-10                    Government Assistance - No Specific Relation to Operating Activities\n- SIC-12                    Consolidation - Special Purpose Entities\n- SIC-13                    Jointly Controlled Entities - Non-Monetary Contributions by Venturers\n- SIC-15                    Operating Leases - Incentives\n- SIC-21                    Income Taxes - Recovery of Revalued Non-Depreciable Assets\n- SIC-25                    Income Taxes - Changes in the Tax Status of an Entity or its Shareholders\n- SIC-27                    Evaluating the Substance of Transactions Involving the Legal Form of a Lease\n- SIC-29                    Service Concession Arrangements: Disclosures\n- SIC-31                    Revenue - Barter Transactions involving Advertising Services\n- SIC-32                    Intangible Assets - Web Site Costs"
+	},
+	"type": "TABLE"
+}

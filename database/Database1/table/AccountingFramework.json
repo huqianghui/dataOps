@@ -1,0 +1,156 @@
+{
+	"name": "AccountingFramework",
+	"properties": {
+		"Name": "AccountingFramework",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Database1",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AccountingFrameworkId",
+					"Description": "The unique identifier of an Accounting Framework.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingFramework.cdm.json/AccountingFramework",
+						"Name": "AccountingFrameworkId"
+					}
+				},
+				{
+					"Name": "AccountingFrameworkName",
+					"Description": "The name of an Accounting Framework.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingFramework.cdm.json/AccountingFramework",
+						"Name": "AccountingFrameworkName"
+					}
+				},
+				{
+					"Name": "AccountingFrameworkDescription",
+					"Description": "The description of an Accounting Framework.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingFramework.cdm.json/AccountingFramework",
+						"Name": "AccountingFrameworkDescription"
+					}
+				},
+				{
+					"Name": "GoverningPartyId",
+					"Description": "The unique identifier of a Party.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingFramework.cdm.json/AccountingFramework",
+						"Name": "GoverningPartyId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "7a61f408-92ff-4b6f-9e51-1917b488418c",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/AccountingFramework",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/AccountingFramework",
+				"Properties": {
+					"LinkedServiceName": "demo-ws-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AccountingFrameworkId\":{\"entity\":\"AccountingFramework.cdm.json/AccountingFramework\",\"name\":\"AccountingFrameworkId\"},\"AccountingFrameworkName\":{\"entity\":\"AccountingFramework.cdm.json/AccountingFramework\",\"name\":\"AccountingFrameworkName\"},\"AccountingFrameworkDescription\":{\"entity\":\"AccountingFramework.cdm.json/AccountingFramework\",\"name\":\"AccountingFrameworkDescription\"},\"GoverningPartyId\":{\"entity\":\"AccountingFramework.cdm.json/AccountingFramework\",\"name\":\"GoverningPartyId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AccountingFramework\",\"path\":\"AccountingFramework.cdm.json/AccountingFramework\"},\"description\":\"There are many different frameworks of accounting standards in use internationally. Each of these frameworks consists of a set of standards / rules / interpretations. Each accounting framework is controlled by their own governing body.\\n\\nEx:\\nGAAP\\nUS GAAP\\nIFRS\\nFERC\",\"primaryKey\":[\"AccountingFrameworkId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingFramework.cdm.json/AccountingFramework\",\"name\":\"AccountingFrameworkId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Accounting Framework.\",\"isNullable\":false,\"name\":\"AccountingFrameworkId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingFramework.cdm.json/AccountingFramework\",\"name\":\"AccountingFrameworkName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Accounting Framework.\",\"isNullable\":true,\"name\":\"AccountingFrameworkName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingFramework.cdm.json/AccountingFramework\",\"name\":\"AccountingFrameworkDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Accounting Framework.\",\"isNullable\":true,\"name\":\"AccountingFrameworkDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingFramework.cdm.json/AccountingFramework\",\"name\":\"GoverningPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"GoverningPartyId\"}]}}}",
+			"Description": "There are many different frameworks of accounting standards in use internationally. Each of these frameworks consists of a set of standards / rules / interpretations. Each accounting framework is controlled by their own governing body.\n\nEx:\nGAAP\nUS GAAP\nIFRS\nFERC",
+			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "AccountingFrameworkId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AccountingFrameworkId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AccountingFrameworkName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AccountingFrameworkDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"GoverningPartyId\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "60132738-9201-4a98-86a6-9459edc0df9e",
+		"Description": "There are many different frameworks of accounting standards in use internationally. Each of these frameworks consists of a set of standards / rules / interpretations. Each accounting framework is controlled by their own governing body.\n\nEx:\nGAAP\nUS GAAP\nIFRS\nFERC"
+	},
+	"type": "TABLE"
+}

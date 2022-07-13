@@ -1,0 +1,330 @@
+{
+	"name": "AuditorReport",
+	"properties": {
+		"Name": "AuditorReport",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Database1",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "LegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.\n\nIn this case it is the business, organization or legal entity whose books are being recorded and financial statements presented.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "LegalEntityId"
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the financial statement is prepared.",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "PeriodStartDate"
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the financial statement is prepared.",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "PeriodEndDate"
+					}
+				},
+				{
+					"Name": "AuditorReportDate",
+					"Description": "The date of the auditor report.",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "AuditorReportDate"
+					}
+				},
+				{
+					"Name": "AuditorOpeningStatement",
+					"Description": "The opening statement of the Auditor Report as prepared by the Independent Auditor.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "AuditorOpeningStatement"
+					}
+				},
+				{
+					"Name": "ManagementResponsibilityStatement",
+					"Description": "A statement regarding the responsibility of Management for the preparation of the Consolidate Financial Statements.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "ManagementResponsibilityStatement"
+					}
+				},
+				{
+					"Name": "AuditorResponsibilityStatement",
+					"Description": "A statement regarding the responsibility of the Auditor in preparing the Auditor Report. .",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "AuditorResponsibilityStatement"
+					}
+				},
+				{
+					"Name": "AuditorOpinionStatement",
+					"Description": "The opinion statement that the Independent Auditor wishes to make regarding the preparation of the set of financial statements.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "AuditorOpinionStatement"
+					}
+				},
+				{
+					"Name": "AuditorOtherStatement",
+					"Description": "Any other statement that the Independent Auditor wishes to make regarding the preparation of the set of financial statements.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "AuditorOtherStatement"
+					}
+				},
+				{
+					"Name": "AuditorReportText",
+					"Description": "The report says that auditors audited the financial statements and that the statements are 'the responsibility of management'.    It also says that the financial statements fairly present the financial results.\n\nThe auditors assure the audience that the statements were prepared in conformity with IFRS.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "AuditorReportText"
+					}
+				},
+				{
+					"Name": "QualifiedOpinionIndicator",
+					"Description": "Indicates that the auditors call attention to exceptions.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "QualifiedOpinionIndicator"
+					}
+				},
+				{
+					"Name": "AdverseOpinionIndicator",
+					"Description": "An opinion by an external auditor stating that the financial statements were not presented fairly or in accordance with IFRS.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "AdverseOpinionIndicator"
+					}
+				},
+				{
+					"Name": "AuditorId",
+					"Description": "The unique identifier of an Auditor.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AuditorReport.cdm.json/AuditorReport",
+						"Name": "AuditorId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "664cc1ed-eec5-4de4-a006-c293751cb721",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/AuditorReport",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/AuditorReport",
+				"Properties": {
+					"LinkedServiceName": "demo-ws-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LegalEntityId\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"LegalEntityId\"},\"PeriodStartDate\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"PeriodEndDate\"},\"AuditorReportDate\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorReportDate\"},\"AuditorOpeningStatement\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorOpeningStatement\"},\"ManagementResponsibilityStatement\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"ManagementResponsibilityStatement\"},\"AuditorResponsibilityStatement\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorResponsibilityStatement\"},\"AuditorOpinionStatement\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorOpinionStatement\"},\"AuditorOtherStatement\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorOtherStatement\"},\"AuditorReportText\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorReportText\"},\"QualifiedOpinionIndicator\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"QualifiedOpinionIndicator\"},\"AdverseOpinionIndicator\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AdverseOpinionIndicator\"},\"AuditorId\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AuditorReport\",\"path\":\"AuditorReport.cdm.json/AuditorReport\"},\"description\":\"A statement from the auditors (accountants) that they have examined a business' books of accounts to check whether they have been properly kept and whether they represent a true and fair view of the company's trading according to the accounting guidelines in use by the business.\",\"primaryKey\":[\"LegalEntityId\",\"PeriodStartDate\",\"PeriodEndDate\",\"AuditorReportDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"LegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\\n\\nIn this case it is the business, organization or legal entity whose books are being recorded and financial statements presented.\",\"isNullable\":false,\"name\":\"LegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the financial statement is prepared.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the financial statement is prepared.\",\"isNullable\":false,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorReportDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of the auditor report.\",\"isNullable\":false,\"name\":\"AuditorReportDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorOpeningStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The opening statement of the Auditor Report as prepared by the Independent Auditor.\",\"isNullable\":true,\"name\":\"AuditorOpeningStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"ManagementResponsibilityStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the responsibility of Management for the preparation of the Consolidate Financial Statements.\",\"isNullable\":true,\"name\":\"ManagementResponsibilityStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorResponsibilityStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the responsibility of the Auditor in preparing the Auditor Report. .\",\"isNullable\":true,\"name\":\"AuditorResponsibilityStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorOpinionStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The opinion statement that the Independent Auditor wishes to make regarding the preparation of the set of financial statements.\",\"isNullable\":true,\"name\":\"AuditorOpinionStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorOtherStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Any other statement that the Independent Auditor wishes to make regarding the preparation of the set of financial statements.\",\"isNullable\":true,\"name\":\"AuditorOtherStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorReportText\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The report says that auditors audited the financial statements and that the statements are 'the responsibility of management'.    It also says that the financial statements fairly present the financial results.\\n\\nThe auditors assure the audience that the statements were prepared in conformity with IFRS.\",\"isNullable\":true,\"name\":\"AuditorReportText\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"QualifiedOpinionIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the auditors call attention to exceptions.\",\"isNullable\":true,\"name\":\"QualifiedOpinionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AdverseOpinionIndicator\"},\"dataType\":\"boolean\",\"description\":\"An opinion by an external auditor stating that the financial statements were not presented fairly or in accordance with IFRS.\",\"isNullable\":true,\"name\":\"AdverseOpinionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AuditorReport.cdm.json/AuditorReport\",\"name\":\"AuditorId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Auditor.\",\"isNullable\":true,\"name\":\"AuditorId\"}]}}}",
+			"Description": "A statement from the auditors (accountants) that they have examined a business' books of accounts to check whether they have been properly kept and whether they represent a true and fair view of the company's trading according to the accounting guidelines in use by the business.",
+			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "LegalEntityId,PeriodStartDate,PeriodEndDate,AuditorReportDate",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"LegalEntityId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartDate\",\"type\":\"date\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndDate\",\"type\":\"date\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AuditorReportDate\",\"type\":\"date\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AuditorOpeningStatement\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ManagementResponsibilityStatement\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AuditorResponsibilityStatement\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AuditorOpinionStatement\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AuditorOtherStatement\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AuditorReportText\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"QualifiedOpinionIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AdverseOpinionIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AuditorId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "ede7840e-59f6-408b-8907-1ccb1af87e6c",
+		"Description": "A statement from the auditors (accountants) that they have examined a business' books of accounts to check whether they have been properly kept and whether they represent a true and fair view of the company's trading according to the accounting guidelines in use by the business."
+	},
+	"type": "TABLE"
+}

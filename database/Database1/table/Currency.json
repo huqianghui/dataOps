@@ -1,0 +1,156 @@
+{
+	"name": "Currency",
+	"properties": {
+		"Name": "Currency",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Database1",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 3,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Currency.cdm.json/Currency",
+						"Name": "IsoCurrencyCode"
+					}
+				},
+				{
+					"Name": "CurrencyName",
+					"Description": "The name of the currency.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Currency.cdm.json/Currency",
+						"Name": "CurrencyName"
+					}
+				},
+				{
+					"Name": "CountryId",
+					"Description": "The unique identifier of the Country.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Currency.cdm.json/Currency",
+						"Name": "CountryId"
+					}
+				},
+				{
+					"Name": "CurrencySymbol",
+					"Description": "The symbol associated with the currency.",
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Currency.cdm.json/Currency",
+						"Name": "CurrencySymbol"
+					}
+				}
+			],
+			"ColumnSetEntityName": "7f430954-a7a9-43a5-95e2-15724b9d0803",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/Currency",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/Currency",
+				"Properties": {
+					"LinkedServiceName": "demo-ws-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IsoCurrencyCode\":{\"entity\":\"Currency.cdm.json/Currency\",\"name\":\"IsoCurrencyCode\"},\"CurrencyName\":{\"entity\":\"Currency.cdm.json/Currency\",\"name\":\"CurrencyName\"},\"CountryId\":{\"entity\":\"Currency.cdm.json/Currency\",\"name\":\"CountryId\"},\"CurrencySymbol\":{\"entity\":\"Currency.cdm.json/Currency\",\"name\":\"CurrencySymbol\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Currency\",\"path\":\"Currency.cdm.json/Currency\"},\"description\":\"The definition of Currency is based upon the ISO 4217 standard.\\n\\nISO 4217 is the international standard describing three letter codes (also known as the currency code) to define the names of currencies established by the International Organization for Standardization (ISO). \\n\\nThe first two letters of the code are the two letters of ISO 3166-1 alpha-2 country codes (which are similar to those used for national top-level domains on the Internet) and the third is usually the initial of the currency itself. So Japan's currency code becomes JPY-JP for Japan and Y for yen. This eliminates the problem caused by the names dollar, franc and pound being used in dozens of different countries, each having significantly differing values. Also, if a currency is revalued, the currency code's last letter is changed to distinguish it from the old currency. In some cases, the third letter is the initial for \\\"new\\\" in that country's language, to distinguish it from an older currency that was revalued; the code often long outlasts the usage of the term \\\"new\\\" itself. Examples of this include the Mexican peso (MXN) and the Turkish lira (TRY). Other changes can be seen, however; the Russian ruble, for example, changed from RUR to RUB, where the B comes from the third letter in the word \\\"ruble\\\".\\n\\nThere is also a three-digit code number assigned to each currency, in the same manner as there is also a three-digit code number assigned to each country as part of ISO 3166. This numeric code is usually the same as the ISO 3166 numeric code. For example, USD (US Dollar) has code 840 which is also the numeric code for US (United States).\\n\\nThe standard also defines the relationship between the major currency unit and any minor currency unit. Often, the minor currency unit has a value that is 1/100 of the major unit, but 1/10 or 1/1000 are also common. Some currencies do not have any minor currency unit at all. In others, the major currency unit has so little value that the minor unit is no longer generally used (e.g. the Japanese sen, 1/100th of a yen). Mauritania does not use a decimal division of units, setting 1 ouguiya (UM) = 5 khoums, and Madagascar has 1 ariary = 5 iraimbilanja. This is indicated in the standard by the currency exponent. For example USD has exponent 2, while JPY has exponent 0.\\n\\nISO 4217 includes codes not only for currencies, but also for precious metals (gold, silver, palladium and platinum; by definition expressed per one troy ounce, as compared to \\\"1 USD\\\") and certain other entities used in international finance, e.g. Special Drawing Rights. There are also special codes allocated for testing purposes (XTS), and to indicate no currency transactions (XXX). These codes all begin with the letter \\\"X\\\". The precious metals use \\\"X\\\" plus the metal's chemical symbol; silver, for example, is XAG. ISO 3166 never assigns country codes beginning with \\\"X\\\" while these codes are assigned for privately customized use only (reserved, never for official codes), so ISO 4217 can use \\\"X\\\" codes for non-country-specific currencies without risk of clashing with future country codes.\\n\\nThis is a list of global currencies and the three-character currency codes that we have found are generally used to represent them. \\n\\nIn most cases, the currency code is composed of the country's two-character Internet country code plus an extra character to denote the currency unit.\\n\\nFor example, the code for Canadian Dollars is simply Canada's two-character Internet code (\\\"CA\\\") plus a one-character currency designator (\\\"D\\\").\\n\\nISO 4217 (Codes for the Representation of Currencies and Funds) defines three-letter abbreviations for world currencies. \\n\\nThe general principle used to construct these abbreviations is to take the two-letter abbreviations defined in ISO 3166 (Codes for the Representation of Names of Countries) and append the first letter of the currency name (e.g., USD for the United States \\n\\nIn the case of currencies defined by supra-national entities, ISO 4217 assigns two-letter entity codes starting with \\\"X\\\" to use in place of country codes (e.g., XCD for the Central Caribbean Dollar). \\n\\nThe following are examples:\\n\\nUSD  America (United States of America), Dollars\\nAUD  Australia, Dollars\\nCAD  Canada, Dollars\",\"primaryKey\":[\"IsoCurrencyCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Currency.cdm.json/Currency\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":false,\"name\":\"IsoCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Currency.cdm.json/Currency\",\"name\":\"CurrencyName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the currency.\",\"isNullable\":true,\"name\":\"CurrencyName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Currency.cdm.json/Currency\",\"name\":\"CountryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Country.\",\"isNullable\":true,\"name\":\"CountryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Currency.cdm.json/Currency\",\"name\":\"CurrencySymbol\"},\"dataType\":\"binary\",\"description\":\"The symbol associated with the currency.\",\"isNullable\":true,\"name\":\"CurrencySymbol\"}]}}}",
+			"Description": "The definition of Currency is based upon the ISO 4217 standard.\n\nISO 4217 is the international standard describing three letter codes (also known as the currency code) to define the names of currencies established by the International Organization for Standardization (ISO). \n\nThe first two letters of the code are the two letters of ISO 3166-1 alpha-2 country codes (which are similar to those used for national top-level domains on the Internet) and the third is usually the initial of the currency itself. So Japan's currency code becomes JPY-JP for Japan and Y for yen. This eliminates the problem caused by the names dollar, franc and pound being used in dozens of different countries, each having significantly differing values. Also, if a currency is revalued, the currency code's last letter is changed to distinguish it from the old currency. In some cases, the third letter is the initial for \"new\" in that country's language, to distinguish it from an older currency that was revalued; the code often long outlasts the usage of the term \"new\" itself. Examples of this include the Mexican peso (MXN) and the Turkish lira (TRY). Other changes can be seen, however; the Russian ruble, for example, changed from RUR to RUB, where the B comes from the third letter in the word \"ruble\".\n\nThere is also a three-digit code number assigned to each currency, in the same manner as there is also a three-digit code number assigned to each country as part of ISO 3166. This numeric code is usually the same as the ISO 3166 numeric code. For example, USD (US Dollar) has code 840 which is also the numeric code for US (United States).\n\nThe standard also defines the relationship between the major currency unit and any minor currency unit. Often, the minor currency unit has a value that is 1/100 of the major unit, but 1/10 or 1/1000 are also common. Some currencies do not have any minor currency unit at all. In others, the major currency unit has so little value that the minor unit is no longer generally used (e.g. the Japanese sen, 1/100th of a yen). Mauritania does not use a decimal division of units, setting 1 ouguiya (UM) = 5 khoums, and Madagascar has 1 ariary = 5 iraimbilanja. This is indicated in the standard by the currency exponent. For example USD has exponent 2, while JPY has exponent 0.\n\nISO 4217 includes codes not only for currencies, but also for precious metals (gold, silver, palladium and platinum; by definition expressed per one troy ounce, as compared to \"1 USD\") and certain other entities used in international finance, e.g. Special Drawing Rights. There are also special codes allocated for testing purposes (XTS), and to indicate no currency transactions (XXX). These codes all begin with the letter \"X\". The precious metals use \"X\" plus the metal's chemical symbol; silver, for example, is XAG. ISO 3166 never assigns country codes beginning with \"X\" while these codes are assigned for privately customized use only (reserved, never for official codes), so ISO 4217 can use \"X\" codes for non-country-specific currencies without risk of clashing with future country codes.\n\nThis is a list of global currencies and the three-character currency codes that we have found are generally used to represent them. \n\nIn most cases, the currency code is composed of the country's two-character Internet country code plus an extra character to denote the currency unit.\n\nFor example, the code for Canadian Dollars is simply Canada's two-character Internet code (\"CA\") plus a one-character currency designator (\"D\").\n\nISO 4217 (Codes for the Representation of Currencies and Funds) defines three-letter abbreviations for world currencies. \n\nThe general principle used to construct these abbreviations is to take the two-letter abbreviations defined in ISO 3166 (Codes for the Representation of Names of Countries) and append the first letter of the currency name (e.g., USD for the United States \n\nIn the case of currencies defined by supra-national entities, ISO 4217 assigns two-letter entity codes starting with \"X\" to use in place of country codes (e.g., XCD for the Central Caribbean Dollar). \n\nThe following are examples:\n\nUSD  America (United States of America), Dollars\nAUD  Australia, Dollars\nCAD  Canada, Dollars",
+			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "IsoCurrencyCode",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"IsoCurrencyCode\",\"type\":\"string\",\"nullable\":false,\"metadata\":{}},{\"name\":\"CurrencyName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CountryId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrencySymbol\",\"type\":\"binary\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "4c7c7b1b-2029-4987-bd80-7f5c9268a4df",
+		"Description": "The definition of Currency is based upon the ISO 4217 standard.\n\nISO 4217 is the international standard describing three letter codes (also known as the currency code) to define the names of currencies established by the International Organization for Standardization (ISO). \n\nThe first two letters of the code are the two letters of ISO 3166-1 alpha-2 country codes (which are similar to those used for national top-level domains on the Internet) and the third is usually the initial of the currency itself. So Japan's currency code becomes JPY-JP for Japan and Y for yen. This eliminates the problem caused by the names dollar, franc and pound being used in dozens of different countries, each having significantly differing values. Also, if a currency is revalued, the currency code's last letter is changed to distinguish it from the old currency. In some cases, the third letter is the initial for \"new\" in that country's language, to distinguish it from an older currency that was revalued; the code often long outlasts the usage of the term \"new\" itself. Examples of this include the Mexican peso (MXN) and the Turkish lira (TRY). Other changes can be seen, however; the Russian ruble, for example, changed from RUR to RUB, where the B comes from the third letter in the word \"ruble\".\n\nThere is also a three-digit code number assigned to each currency, in the same manner as there is also a three-digit code number assigned to each country as part of ISO 3166. This numeric code is usually the same as the ISO 3166 numeric code. For example, USD (US Dollar) has code 840 which is also the numeric code for US (United States).\n\nThe standard also defines the relationship between the major currency unit and any minor currency unit. Often, the minor currency unit has a value that is 1/100 of the major unit, but 1/10 or 1/1000 are also common. Some currencies do not have any minor currency unit at all. In others, the major currency unit has so little value that the minor unit is no longer generally used (e.g. the Japanese sen, 1/100th of a yen). Mauritania does not use a decimal division of units, setting 1 ouguiya (UM) = 5 khoums, and Madagascar has 1 ariary = 5 iraimbilanja. This is indicated in the standard by the currency exponent. For example USD has exponent 2, while JPY has exponent 0.\n\nISO 4217 includes codes not only for currencies, but also for precious metals (gold, silver, palladium and platinum; by definition expressed per one troy ounce, as compared to \"1 USD\") and certain other entities used in international finance, e.g. Special Drawing Rights. There are also special codes allocated for testing purposes (XTS), and to indicate no currency transactions (XXX). These codes all begin with the letter \"X\". The precious metals use \"X\" plus the metal's chemical symbol; silver, for example, is XAG. ISO 3166 never assigns country codes beginning with \"X\" while these codes are assigned for privately customized use only (reserved, never for official codes), so ISO 4217 can use \"X\" codes for non-country-specific currencies without risk of clashing with future country codes.\n\nThis is a list of global currencies and the three-character currency codes that we have found are generally used to represent them. \n\nIn most cases, the currency code is composed of the country's two-character Internet country code plus an extra character to denote the currency unit.\n\nFor example, the code for Canadian Dollars is simply Canada's two-character Internet code (\"CA\") plus a one-character currency designator (\"D\").\n\nISO 4217 (Codes for the Representation of Currencies and Funds) defines three-letter abbreviations for world currencies. \n\nThe general principle used to construct these abbreviations is to take the two-letter abbreviations defined in ISO 3166 (Codes for the Representation of Names of Countries) and append the first letter of the currency name (e.g., USD for the United States \n\nIn the case of currencies defined by supra-national entities, ISO 4217 assigns two-letter entity codes starting with \"X\" to use in place of country codes (e.g., XCD for the Central Caribbean Dollar). \n\nThe following are examples:\n\nUSD  America (United States of America), Dollars\nAUD  Australia, Dollars\nCAD  Canada, Dollars"
+	},
+	"type": "TABLE"
+}

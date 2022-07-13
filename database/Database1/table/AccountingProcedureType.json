@@ -1,0 +1,137 @@
+{
+	"name": "AccountingProcedureType",
+	"properties": {
+		"Name": "AccountingProcedureType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Database1",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AccountingProcedureTypeId",
+					"Description": "The unique identifier of an Accounting Procedure Type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingProcedureType.cdm.json/AccountingProcedureType",
+						"Name": "AccountingProcedureTypeId"
+					}
+				},
+				{
+					"Name": "AccountingProcedureTypeName",
+					"Description": "The name of an Accounting Procedure Type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingProcedureType.cdm.json/AccountingProcedureType",
+						"Name": "AccountingProcedureTypeName"
+					}
+				},
+				{
+					"Name": "AccountingProcedureTypeDescription",
+					"Description": "The description of an Accounting Procedure Type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingProcedureType.cdm.json/AccountingProcedureType",
+						"Name": "AccountingProcedureTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "19aff954-3875-455e-a686-f80bc3cfc51f",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/AccountingProcedureType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/AccountingProcedureType",
+				"Properties": {
+					"LinkedServiceName": "demo-ws-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AccountingProcedureTypeId\":{\"entity\":\"AccountingProcedureType.cdm.json/AccountingProcedureType\",\"name\":\"AccountingProcedureTypeId\"},\"AccountingProcedureTypeName\":{\"entity\":\"AccountingProcedureType.cdm.json/AccountingProcedureType\",\"name\":\"AccountingProcedureTypeName\"},\"AccountingProcedureTypeDescription\":{\"entity\":\"AccountingProcedureType.cdm.json/AccountingProcedureType\",\"name\":\"AccountingProcedureTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AccountingProcedureType\",\"path\":\"AccountingProcedureType.cdm.json/AccountingProcedureType\"},\"description\":\"An accounting procedure alters or affects one or more accounts.\\n\\nFor Example, closing entries at the end of an accounting period transfer the balances of temporary accounts to a permanent stockholders' equity account, Retained Earnings.   After the closing process - revenues, expenses and income summary accounts have zero balances.\\n\\nThis is often due to the accrual basis of accounting in which revenue is recognized when earned, regardless of when the cash is actually collected and expenses are matched to revenue regardless of when cash is paid out.   \\n\\nTo adjust expense or income items that have already been recorded, a reclassification or adjusting entry is required that involves one or more transactions affecting associated accounts.\",\"primaryKey\":[\"AccountingProcedureTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingProcedureType.cdm.json/AccountingProcedureType\",\"name\":\"AccountingProcedureTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Accounting Procedure Type.\",\"isNullable\":false,\"name\":\"AccountingProcedureTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingProcedureType.cdm.json/AccountingProcedureType\",\"name\":\"AccountingProcedureTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Accounting Procedure Type.\",\"isNullable\":true,\"name\":\"AccountingProcedureTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingProcedureType.cdm.json/AccountingProcedureType\",\"name\":\"AccountingProcedureTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Accounting Procedure Type.\",\"isNullable\":true,\"name\":\"AccountingProcedureTypeDescription\"}]}}}",
+			"Description": "An accounting procedure alters or affects one or more accounts.\n\nFor Example, closing entries at the end of an accounting period transfer the balances of temporary accounts to a permanent stockholders' equity account, Retained Earnings.   After the closing process - revenues, expenses and income summary accounts have zero balances.\n\nThis is often due to the accrual basis of accounting in which revenue is recognized when earned, regardless of when the cash is actually collected and expenses are matched to revenue regardless of when cash is paid out.   \n\nTo adjust expense or income items that have already been recorded, a reclassification or adjusting entry is required that involves one or more transactions affecting associated accounts.",
+			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "AccountingProcedureTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AccountingProcedureTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AccountingProcedureTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AccountingProcedureTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "5fb259ea-5b69-4032-a24e-d0ab80307cb4",
+		"Description": "An accounting procedure alters or affects one or more accounts.\n\nFor Example, closing entries at the end of an accounting period transfer the balances of temporary accounts to a permanent stockholders' equity account, Retained Earnings.   After the closing process - revenues, expenses and income summary accounts have zero balances.\n\nThis is often due to the accrual basis of accounting in which revenue is recognized when earned, regardless of when the cash is actually collected and expenses are matched to revenue regardless of when cash is paid out.   \n\nTo adjust expense or income items that have already been recorded, a reclassification or adjusting entry is required that involves one or more transactions affecting associated accounts."
+	},
+	"type": "TABLE"
+}

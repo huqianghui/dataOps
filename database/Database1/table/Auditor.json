@@ -1,0 +1,308 @@
+{
+	"name": "Auditor",
+	"properties": {
+		"Name": "Auditor",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Database1",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AuditorId",
+					"Description": "The unique identifier of an Auditor.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Auditor.cdm.json/Auditor",
+						"Name": "AuditorId"
+					}
+				},
+				{
+					"Name": "AuditorName",
+					"Description": "The name of an Auditor.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Auditor.cdm.json/Auditor",
+						"Name": "AuditorName"
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Auditor.cdm.json/Auditor",
+						"Name": "PartyId"
+					}
+				},
+				{
+					"Name": "DunsNumber",
+					"Description": "An exclusive nine-digit Dun & Bradstreet D-U-N-S Number is assigned to each business location in a global database, it is widely used as a tool for identifying, organizing and consolidating information about businesses. Companies worldwide use it to link information about suppliers, customers and trading partners, providing them a more complete picture of risks and opportunities in their business relationships.\n\nD&B D-U-N-S Numbers are the key to building corporate family relationships in the D&B file. Since each location of a business may have its own unique D&B D-U-N-S Number, a large organization is likely to have many different D&B D-U-N-S Numbers within its corporate \"family tree\". D&B links the D&B D-U-N-S Numbers of parents, subsidiaries, headquarters and branches on more than 6.0 million corporate family members around the world.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 9,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Auditor.cdm.json/Auditor",
+						"Name": "DunsNumber"
+					}
+				},
+				{
+					"Name": "GlobalUltimateDunsNumber",
+					"Description": "One of eight (8) types of business relationships defined in the D&B file:\n\nThe Global Ultimate is the top most responsible entity within the global family tree. The Global Ultimate may have branches and/or subsidiaries reporting directly or indirectly to it.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 9,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Auditor.cdm.json/Auditor",
+						"Name": "GlobalUltimateDunsNumber"
+					}
+				},
+				{
+					"Name": "DomesticUltimateDunsNumber",
+					"Description": "One of eight (8) types of business relationships defined in the D&B file:\n\nThe Domestic Ultimate is a subsidiary within the global family tree which is the highest ranking member within a specific country.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 9,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Auditor.cdm.json/Auditor",
+						"Name": "DomesticUltimateDunsNumber"
+					}
+				},
+				{
+					"Name": "ParentDunsNumber",
+					"Description": "One of eight (8) types of business relationships defined in the D&B file:\n\nA parent is a corporation that owns more than 50 percent of another corporation. The parent company also may be a subsidiary of another corporation. If the parent also has branches, then it is also a headquarters.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 9,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Auditor.cdm.json/Auditor",
+						"Name": "ParentDunsNumber"
+					}
+				},
+				{
+					"Name": "SubsidiaryIndicator",
+					"Description": "Indicates that the entity is a subsidiary.\n\nA subsidiary is a corporation that is more than 50% owned by another corporation and will have a different legal business name from its parent company. A subsidiary may have branches and/or subsidiaries of its own. If it does, then its D-U-N-S Number appears in the headquarter/parent D-U-N-S Number field of its children.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Auditor.cdm.json/Auditor",
+						"Name": "SubsidiaryIndicator"
+					}
+				},
+				{
+					"Name": "DivisionIndicator",
+					"Description": "Indicates that the entity is a division.\n\nA division, like a branch, is a secondary location of a business. However, a division carries out specific business operations related to the headquarters under a divisional name. Divisions look similar to branches in D&B WorldBase and carry a branch code.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Auditor.cdm.json/Auditor",
+						"Name": "DivisionIndicator"
+					}
+				},
+				{
+					"Name": "BranchIndicator",
+					"Description": "Indicates that the entity is a branch.\n\nA branch is a secondary location of its headquarters. It has no legal responsibility for its debts, even though bills may be paid from the branch location. It will have the same legal business name as its headquarters, although branches frequently operate under a different trade style than the headquarters establishment. A branch may be located at the same address as the headquarters if it has a unique trade style. In such cases, the branch may appear to be a duplicate with a different D-U-N-S number than the headquarters record, which may confuse customers if they don't purchase the trade style field.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Auditor.cdm.json/Auditor",
+						"Name": "BranchIndicator"
+					}
+				},
+				{
+					"Name": "HeadquartersIndicator",
+					"Description": "Indicates that the entity is a headquarters.\n\nA headquarters is a business establishment that has branches or divisions reporting to it, and is financially responsible for those branches or divisions. If the headquarters is more that 50% owned by another corporation, it also will be a subsidiary. If it owns more that 50% of another corporation, then it is also a parent.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Auditor.cdm.json/Auditor",
+						"Name": "HeadquartersIndicator"
+					}
+				},
+				{
+					"Name": "SingleLocationSubsidiaryIndicator",
+					"Description": "Indicates that the entity is a single location subsidiary.\n\nA single location subsidiary has reporting responsibilities to its parent; however, it does not have branches or subsidiaries reporting to it. Do not confuse this with a stand-alone business which is titled \"single location\" and is not part of a corporate family.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Auditor.cdm.json/Auditor",
+						"Name": "SingleLocationSubsidiaryIndicator"
+					}
+				}
+			],
+			"ColumnSetEntityName": "52a76cd6-4eec-453b-bad3-f2e7ea7d7966",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/Auditor",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/Auditor",
+				"Properties": {
+					"LinkedServiceName": "demo-ws-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AuditorId\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"AuditorId\"},\"AuditorName\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"AuditorName\"},\"PartyId\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"PartyId\"},\"DunsNumber\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"DunsNumber\"},\"GlobalUltimateDunsNumber\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"GlobalUltimateDunsNumber\"},\"DomesticUltimateDunsNumber\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"DomesticUltimateDunsNumber\"},\"ParentDunsNumber\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"ParentDunsNumber\"},\"SubsidiaryIndicator\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"SubsidiaryIndicator\"},\"DivisionIndicator\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"DivisionIndicator\"},\"BranchIndicator\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"BranchIndicator\"},\"HeadquartersIndicator\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"HeadquartersIndicator\"},\"SingleLocationSubsidiaryIndicator\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"SingleLocationSubsidiaryIndicator\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Auditor\",\"path\":\"Auditor.cdm.json/Auditor\"},\"description\":\"The party that audits and qualified the associated financial statement.\",\"primaryKey\":[\"AuditorId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"AuditorId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Auditor.\",\"isNullable\":false,\"name\":\"AuditorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"AuditorName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Auditor.\",\"isNullable\":true,\"name\":\"AuditorName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"DunsNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":9,\"description\":\"An exclusive nine-digit Dun & Bradstreet D-U-N-S Number is assigned to each business location in a global database, it is widely used as a tool for identifying, organizing and consolidating information about businesses. Companies worldwide use it to link information about suppliers, customers and trading partners, providing them a more complete picture of risks and opportunities in their business relationships.\\n\\nD&B D-U-N-S Numbers are the key to building corporate family relationships in the D&B file. Since each location of a business may have its own unique D&B D-U-N-S Number, a large organization is likely to have many different D&B D-U-N-S Numbers within its corporate \\\"family tree\\\". D&B links the D&B D-U-N-S Numbers of parents, subsidiaries, headquarters and branches on more than 6.0 million corporate family members around the world.\",\"isNullable\":true,\"scale\":0,\"name\":\"DunsNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"GlobalUltimateDunsNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":9,\"description\":\"One of eight (8) types of business relationships defined in the D&B file:\\n\\nThe Global Ultimate is the top most responsible entity within the global family tree. The Global Ultimate may have branches and/or subsidiaries reporting directly or indirectly to it.\",\"isNullable\":true,\"scale\":0,\"name\":\"GlobalUltimateDunsNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"DomesticUltimateDunsNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":9,\"description\":\"One of eight (8) types of business relationships defined in the D&B file:\\n\\nThe Domestic Ultimate is a subsidiary within the global family tree which is the highest ranking member within a specific country.\",\"isNullable\":true,\"scale\":0,\"name\":\"DomesticUltimateDunsNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"ParentDunsNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":9,\"description\":\"One of eight (8) types of business relationships defined in the D&B file:\\n\\nA parent is a corporation that owns more than 50 percent of another corporation. The parent company also may be a subsidiary of another corporation. If the parent also has branches, then it is also a headquarters.\",\"isNullable\":true,\"scale\":0,\"name\":\"ParentDunsNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"SubsidiaryIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the entity is a subsidiary.\\n\\nA subsidiary is a corporation that is more than 50% owned by another corporation and will have a different legal business name from its parent company. A subsidiary may have branches and/or subsidiaries of its own. If it does, then its D-U-N-S Number appears in the headquarter/parent D-U-N-S Number field of its children.\",\"isNullable\":true,\"name\":\"SubsidiaryIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"DivisionIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the entity is a division.\\n\\nA division, like a branch, is a secondary location of a business. However, a division carries out specific business operations related to the headquarters under a divisional name. Divisions look similar to branches in D&B WorldBase and carry a branch code.\",\"isNullable\":true,\"name\":\"DivisionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"BranchIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the entity is a branch.\\n\\nA branch is a secondary location of its headquarters. It has no legal responsibility for its debts, even though bills may be paid from the branch location. It will have the same legal business name as its headquarters, although branches frequently operate under a different trade style than the headquarters establishment. A branch may be located at the same address as the headquarters if it has a unique trade style. In such cases, the branch may appear to be a duplicate with a different D-U-N-S number than the headquarters record, which may confuse customers if they don't purchase the trade style field.\",\"isNullable\":true,\"name\":\"BranchIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"HeadquartersIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the entity is a headquarters.\\n\\nA headquarters is a business establishment that has branches or divisions reporting to it, and is financially responsible for those branches or divisions. If the headquarters is more that 50% owned by another corporation, it also will be a subsidiary. If it owns more that 50% of another corporation, then it is also a parent.\",\"isNullable\":true,\"name\":\"HeadquartersIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Auditor.cdm.json/Auditor\",\"name\":\"SingleLocationSubsidiaryIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the entity is a single location subsidiary.\\n\\nA single location subsidiary has reporting responsibilities to its parent; however, it does not have branches or subsidiaries reporting to it. Do not confuse this with a stand-alone business which is titled \\\"single location\\\" and is not part of a corporate family.\",\"isNullable\":true,\"name\":\"SingleLocationSubsidiaryIndicator\"}]}}}",
+			"Description": "The party that audits and qualified the associated financial statement.",
+			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "AuditorId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AuditorId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AuditorName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"PartyId\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DunsNumber\",\"type\":\"decimal(9,0)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"GlobalUltimateDunsNumber\",\"type\":\"decimal(9,0)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DomesticUltimateDunsNumber\",\"type\":\"decimal(9,0)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ParentDunsNumber\",\"type\":\"decimal(9,0)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SubsidiaryIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DivisionIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"BranchIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"HeadquartersIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SingleLocationSubsidiaryIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "d39b18cd-2e91-48d4-bb3f-68b60386efe2",
+		"Description": "The party that audits and qualified the associated financial statement."
+	},
+	"type": "TABLE"
+}

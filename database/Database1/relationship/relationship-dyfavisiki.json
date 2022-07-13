@@ -1,0 +1,29 @@
+{
+	"name": "relationship-dyfavisiki",
+	"properties": {
+		"Name": "relationship-dyfavisiki",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Database1"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CashFlowStatementPreparationMethod",
+		"ToTableName": "CashFlowStatement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CashFlowStatementPreparationMethodId",
+				"ToColumnName": "CashFlowStatementPreparationMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CashFlowStatementPreparationMethod.cdm.json/CashFlowStatementPreparationMethod\",\"toEntity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"joinPairs\":[{\"fromAttribute\":\"CashFlowStatementPreparationMethodId\",\"toAttribute\":\"CashFlowStatementPreparationMethodId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "8e8be7d9-73b1-4f98-a75b-af6cb8443034"
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,234 @@
+{
+	"name": "AccountingPolicy",
+	"properties": {
+		"Name": "AccountingPolicy",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Database1",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "LegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.\n\nIn this case it is the business, organization or legal entity whose books are being recorded and financial statements presented.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingPolicy.cdm.json/AccountingPolicy",
+						"Name": "LegalEntityId"
+					}
+				},
+				{
+					"Name": "AccountingPolicyId",
+					"Description": "The unique identifier of a policy.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingPolicy.cdm.json/AccountingPolicy",
+						"Name": "AccountingPolicyId"
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the policy is applicable.",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingPolicy.cdm.json/AccountingPolicy",
+						"Name": "PeriodStartDate"
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the policy is applicable.",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingPolicy.cdm.json/AccountingPolicy",
+						"Name": "PeriodEndDate"
+					}
+				},
+				{
+					"Name": "AccountingPolicyText",
+					"Description": "The text of an accounting policy.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingPolicy.cdm.json/AccountingPolicy",
+						"Name": "AccountingPolicyText"
+					}
+				},
+				{
+					"Name": "AccountingFrameworkStandardSection",
+					"Description": "The section of the Accounting Framework Standard to which the policy applies.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingPolicy.cdm.json/AccountingPolicy",
+						"Name": "AccountingFrameworkStandardSection"
+					}
+				},
+				{
+					"Name": "AccountingFrameworkId",
+					"Description": "The unique identifier of an Accounting Framework.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingPolicy.cdm.json/AccountingPolicy",
+						"Name": "AccountingFrameworkId"
+					}
+				},
+				{
+					"Name": "AccountingFrameworkStandardId",
+					"Description": "The unique identifier of an Accounting Framework Standard.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AccountingPolicy.cdm.json/AccountingPolicy",
+						"Name": "AccountingFrameworkStandardId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "853af146-16e0-4240-94a4-f58563a991fd",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/AccountingPolicy",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/AccountingPolicy",
+				"Properties": {
+					"LinkedServiceName": "demo-ws-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LegalEntityId\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"LegalEntityId\"},\"AccountingPolicyId\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"AccountingPolicyId\"},\"PeriodStartDate\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"PeriodEndDate\"},\"AccountingPolicyText\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"AccountingPolicyText\"},\"AccountingFrameworkStandardSection\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"AccountingFrameworkStandardSection\"},\"AccountingFrameworkId\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"AccountingFrameworkId\"},\"AccountingFrameworkStandardId\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"AccountingFrameworkStandardId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AccountingPolicy\",\"path\":\"AccountingPolicy.cdm.json/AccountingPolicy\"},\"description\":\"An accounting policy that is based on the Accounting Framework Standard.\",\"primaryKey\":[\"LegalEntityId\",\"AccountingPolicyId\",\"PeriodStartDate\",\"PeriodEndDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"LegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\\n\\nIn this case it is the business, organization or legal entity whose books are being recorded and financial statements presented.\",\"isNullable\":false,\"name\":\"LegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"AccountingPolicyId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a policy.\",\"isNullable\":false,\"name\":\"AccountingPolicyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the policy is applicable.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the policy is applicable.\",\"isNullable\":false,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"AccountingPolicyText\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The text of an accounting policy.\",\"isNullable\":true,\"name\":\"AccountingPolicyText\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"AccountingFrameworkStandardSection\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The section of the Accounting Framework Standard to which the policy applies.\",\"isNullable\":true,\"name\":\"AccountingFrameworkStandardSection\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"AccountingFrameworkId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Accounting Framework.\",\"isNullable\":true,\"name\":\"AccountingFrameworkId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccountingPolicy.cdm.json/AccountingPolicy\",\"name\":\"AccountingFrameworkStandardId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Accounting Framework Standard.\",\"isNullable\":true,\"name\":\"AccountingFrameworkStandardId\"}]}}}",
+			"Description": "An accounting policy that is based on the Accounting Framework Standard.",
+			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "LegalEntityId,AccountingPolicyId,PeriodStartDate,PeriodEndDate",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"LegalEntityId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AccountingPolicyId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartDate\",\"type\":\"date\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndDate\",\"type\":\"date\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AccountingPolicyText\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AccountingFrameworkStandardSection\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AccountingFrameworkId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AccountingFrameworkStandardId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "81548512-ceee-40c3-8be5-3aaa720e307a",
+		"Description": "An accounting policy that is based on the Accounting Framework Standard."
+	},
+	"type": "TABLE"
+}

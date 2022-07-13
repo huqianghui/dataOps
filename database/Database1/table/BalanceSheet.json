@@ -1,0 +1,1033 @@
+{
+	"name": "BalanceSheet",
+	"properties": {
+		"Name": "BalanceSheet",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Database1",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "LegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "LegalEntityId"
+					}
+				},
+				{
+					"Name": "FinancialStatementId",
+					"Description": "The unique identifier of a Financial Statement.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "FinancialStatementId"
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the financial statement is prepared.",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "PeriodStartDate"
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the financial statement is prepared.",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "PeriodEndDate"
+					}
+				},
+				{
+					"Name": "CurrentAssetsCashAmount",
+					"Description": "Cash in any form - such as waiting to be deposited, in bank accounts, checking accounts.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentAssetsCashAmount"
+					}
+				},
+				{
+					"Name": "CurrentAssetsNotesReceivableAmount",
+					"Description": "Written promises to receive stated sums of money at future dates, classified as current (if due within 12 months) or non-current (if due after 12 months) of the balance sheet date.\n\nRead more: http://www.businessdictionary.com/definition/notes-receivable.html#ixzz17ie7v8jz",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentAssetsNotesReceivableAmount"
+					}
+				},
+				{
+					"Name": "CurrentAssetsInventoriesAmount",
+					"Description": "Inventories are items held for sale or used in the manufacture of products that will be sold.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentAssetsInventoriesAmount"
+					}
+				},
+				{
+					"Name": "CurrentAssetsPrepaidExpensesAmount",
+					"Description": "Expenses such as insurance, rent, property taxes that are paid in advance.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentAssetsPrepaidExpensesAmount"
+					}
+				},
+				{
+					"Name": "CurrentAssetsMarketableSecuritiesAmount",
+					"Description": "Cash substitutes that is temporarily invested to earn a return.   These are short-term maturity instruments of less than one year maturity.\n\nThey should be relatively 'riskless' securities or investments.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentAssetsMarketableSecuritiesAmount"
+					}
+				},
+				{
+					"Name": "CurrentAssetsAccountsReceivablesLessAllowanceForDoubtfulAccountsAmount",
+					"Description": "Accounts receivables are customer balances on outstanding credit sales that are reported at their net realizable value - minus any allowance for doubtful accounts.\n\nDoubtful accounts are those the management judges to be uncollectible during the account period.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentAssetsAccountsReceivablesLessAllowanceForDoubtfulAccountsAmount"
+					}
+				},
+				{
+					"Name": "CurrentAssetsTotalAmount",
+					"Description": "The total amount of current assets.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentAssetsTotalAmount"
+					}
+				},
+				{
+					"Name": "NoncurrentAssetsPropertyPlantAndEquipmentLandAmount",
+					"Description": "Property, Plant And Equipment represent a company's fixed assets that are not consumed in the annual business operations and provide economic benefits for more than one year.\n\nThey are considered tangible because they have physical substance.\n\nLand as a fixed asset refers to property used in the business.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentAssetsPropertyPlantAndEquipmentLandAmount"
+					}
+				},
+				{
+					"Name": "NoncurrentAssetsPropertyPlantAndEquipmentBuildingsAndLeaseholdImprovementsAmount",
+					"Description": "Property, Plant And Equipment represent a company's fixed assets that are not consumed in the annual business operations and provide economic benefits for more than one year.\n\nThey are considered tangible because they have physical substance.\n\nBuildings include buildings and structures owned by the company.   Leasehold improvements are additions or improvements made to leased structures.    They are amortized by the lessee over the economic life of the improvement or the life of the lease whichever is shorter.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentAssetsPropertyPlantAndEquipmentBuildingsAndLeaseholdImprovementsAmount"
+					}
+				},
+				{
+					"Name": "NoncurrentAssetsPropertyPlantAndEquipmentEquipmentAmount",
+					"Description": "Property, Plant And Equipment represent a company's fixed assets that are not consumed in the annual business operations and provide economic benefits for more than one year.\n\nThey are considered tangible because they have physical substance.\n\nEquipment represents the original cost including delivery and installation of the machinery and equipment used in business operations.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentAssetsPropertyPlantAndEquipmentEquipmentAmount"
+					}
+				},
+				{
+					"Name": "NoncurrentAssetsPropertyPlantAndEquipmentLessAccumulatedDepreciationAndAmortizationAmount",
+					"Description": "Property, Plant And Equipment represent a company's fixed assets that are not consumed in the annual business operations and provide economic benefits for more than one year.\n\nThey are considered tangible because they have physical substance.\n\nThis is the accumulated depreciation and amortization for property, plant and equipment.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentAssetsPropertyPlantAndEquipmentLessAccumulatedDepreciationAndAmortizationAmount"
+					}
+				},
+				{
+					"Name": "NoncurrentAssetsMortgagesPayableAmount",
+					"Description": "The mortgages held by the company.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentAssetsMortgagesPayableAmount"
+					}
+				},
+				{
+					"Name": "NoncurrentAssetsLeaseholds",
+					"Description": "Leasehold is a form of property tenure where one party buys the right to occupy land or a building for a given length of time. A lease is a legal estate leasehold that can be bought and sold on the open market and differs from a tenancy where a property is let on a periodic basis such as weekly or monthly",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentAssetsLeaseholds"
+					}
+				},
+				{
+					"Name": "NoncurrentAssetsLeaseholdImprovements",
+					"Description": "Improvements on a leased asset that increase the value of the asset.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentAssetsLeaseholdImprovements"
+					}
+				},
+				{
+					"Name": "NoncurrentAssetsPatents",
+					"Description": "The value of patents held.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentAssetsPatents"
+					}
+				},
+				{
+					"Name": "NoncurrentAssetsCopyrights",
+					"Description": "The value of copyrights held.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentAssetsCopyrights"
+					}
+				},
+				{
+					"Name": "NoncurrentAssetsGoodwill",
+					"Description": "The value of goodwill held.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentAssetsGoodwill"
+					}
+				},
+				{
+					"Name": "NoncurrentAssetsOtherAssetsAmount",
+					"Description": "Other assets can include any number of noncurrent items such as property for sale, start-up costs, advance payments etc.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentAssetsOtherAssetsAmount"
+					}
+				},
+				{
+					"Name": "NoncurrentAssetsTotalAmount",
+					"Description": "The total amount of non-current assets recorded.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentAssetsTotalAmount"
+					}
+				},
+				{
+					"Name": "TotalAssetsAmount",
+					"Description": "The total of all assets - current + noncurrent.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "TotalAssetsAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesAccountsPayableAmount",
+					"Description": "AP are short-term obligations due from credit extended by suppliers etc. for the purchase of goods and services.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesAccountsPayableAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesNotesPayableAmount",
+					"Description": "Notes payable are short-term obligations in the form of promissory notes to suppliers or similar legal entities.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesNotesPayableAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesCurrentMaturitiesOfLongTermDebtAmount",
+					"Description": "The amount that will be repaid during the current year on long-term debt outstanding such as bonds, mortgages etc.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesCurrentMaturitiesOfLongTermDebtAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesAccruedLiabilitiesAmount",
+					"Description": "Accrued liabilities result from the recognition of an expense in the accounting records prior to the actual payment of cash.  \n\nThis is a because most corporations use the accrual rather than the cash basis of accounting in which revenue is recognized when it is earned and expenses are recorded when they are incurred regardless of when the cash is received or paid.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesAccruedLiabilitiesAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesAccruedSalariesAndWagesAmount",
+					"Description": "The total amount of current liabilities assigned to Accrued Salaries And Wages.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesAccruedSalariesAndWagesAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesCommissionsAmount",
+					"Description": "The total amount of current liabilities assigned to Commissions.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesCommissionsAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesInsuranceAmount",
+					"Description": "The total amount of current liabilities assigned to Insurance.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesInsuranceAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesInterestAmount",
+					"Description": "The total amount of current liabilities assigned to Interest.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesInterestAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesPropertyTaxesAmount",
+					"Description": "The total amount of current liabilities assigned to Property Taxes.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesPropertyTaxesAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesPayrollTaxesAmount",
+					"Description": "The total amount of current liabilities assigned to Payroll Taxes.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesPayrollTaxesAmount"
+					}
+				},
+				{
+					"Name": "NoncurrentLiabilitiesContingentLiabilitiesAmount",
+					"Description": "Potential liabilities arising from past events - that a potential liability exists in the future.\n\nEx:\n- Tax assessments\n- Product warranties\n- Pending lawsuits\n- Litigation",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentLiabilitiesContingentLiabilitiesAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesSalesTaxesAmount",
+					"Description": "The total amount of current liabilities assigned to Sales Taxes.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesSalesTaxesAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesIncomeTaxesAmount",
+					"Description": "The total amount of current liabilities assigned to Income Taxes.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesIncomeTaxesAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesPensionsAmount",
+					"Description": "The total amount of current liabilities assigned to Pensions.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesPensionsAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesRoyaltiesAmount",
+					"Description": "The total amount of current liabilities assigned to Royalties.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesRoyaltiesAmount"
+					}
+				},
+				{
+					"Name": "CurrentLiabilitiesTotalAmount",
+					"Description": "The total amount of current liabilities.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "CurrentLiabilitiesTotalAmount"
+					}
+				},
+				{
+					"Name": "NoncurrentLiabilitiesDeferredFederalIncomeTaxesAmount",
+					"Description": "Deferred federal taxes.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentLiabilitiesDeferredFederalIncomeTaxesAmount"
+					}
+				},
+				{
+					"Name": "NoncurrentLiabilitiesBondsAmount",
+					"Description": "Bonds that may be sold to the investing public.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentLiabilitiesBondsAmount"
+					}
+				},
+				{
+					"Name": "NoncurrentLiabilitiesLongTermDebtAmount",
+					"Description": "Deferred long term debt.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentLiabilitiesLongTermDebtAmount"
+					}
+				},
+				{
+					"Name": "NoncurrentLiabilitiesTotalAmount",
+					"Description": "The total amount of noncurrent liabilities.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "NoncurrentLiabilitiesTotalAmount"
+					}
+				},
+				{
+					"Name": "TotalLiabilitiesAmount",
+					"Description": "The total amount of liabilities.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "TotalLiabilitiesAmount"
+					}
+				},
+				{
+					"Name": "StockholdersEquityCommonStockAmount",
+					"Description": "Common stockholders have voting rights but do not receive a fixed return.    Dividends are declared by the company at the discretion of the board of directors.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "StockholdersEquityCommonStockAmount"
+					}
+				},
+				{
+					"Name": "StockholdersEquityAdditionalPaidInCapitalAmount",
+					"Description": "The amount by which the original price of the stock shares exceed par value.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "StockholdersEquityAdditionalPaidInCapitalAmount"
+					}
+				},
+				{
+					"Name": "StockholdersEquityRetainedEarningsAmount",
+					"Description": "Retained earnings is the sum of the company has earned since its inception minus any payments made to shareholders in the form of cash or stock dividends.\n\nRetained earnings are funds a company has elected to reinvest in the operations of the business rather than pay out to stockholders in dividends.   \n\nIt is a measure of all undistributed earnings.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "StockholdersEquityRetainedEarningsAmount"
+					}
+				},
+				{
+					"Name": "StockholdersEquityTotalAmount",
+					"Description": "The total amount of stockholders equity.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "StockholdersEquityTotalAmount"
+					}
+				},
+				{
+					"Name": "TotalLiabilitiesPlusStockholdersEquityAmount",
+					"Description": "The total of all liabilities plus stockholders equity.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BalanceSheet.cdm.json/BalanceSheet",
+						"Name": "TotalLiabilitiesPlusStockholdersEquityAmount"
+					}
+				}
+			],
+			"ColumnSetEntityName": "878a17ca-cad6-4c40-84a7-7881770c373f",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/BalanceSheet",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/BalanceSheet",
+				"Properties": {
+					"LinkedServiceName": "demo-ws-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LegalEntityId\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"LegalEntityId\"},\"FinancialStatementId\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"FinancialStatementId\"},\"PeriodStartDate\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"PeriodEndDate\"},\"CurrentAssetsCashAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsCashAmount\"},\"CurrentAssetsNotesReceivableAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsNotesReceivableAmount\"},\"CurrentAssetsInventoriesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsInventoriesAmount\"},\"CurrentAssetsPrepaidExpensesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsPrepaidExpensesAmount\"},\"CurrentAssetsMarketableSecuritiesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsMarketableSecuritiesAmount\"},\"CurrentAssetsAccountsReceivablesLessAllowanceForDoubtfulAccountsAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsAccountsReceivablesLessAllowanceForDoubtfulAccountsAmount\"},\"CurrentAssetsTotalAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsTotalAmount\"},\"NoncurrentAssetsPropertyPlantAndEquipmentLandAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentLandAmount\"},\"NoncurrentAssetsPropertyPlantAndEquipmentBuildingsAndLeaseholdImprovementsAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentBuildingsAndLeaseholdImprovementsAmount\"},\"NoncurrentAssetsPropertyPlantAndEquipmentEquipmentAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentEquipmentAmount\"},\"NoncurrentAssetsPropertyPlantAndEquipmentLessAccumulatedDepreciationAndAmortizationAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentLessAccumulatedDepreciationAndAmortizationAmount\"},\"NoncurrentAssetsMortgagesPayableAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsMortgagesPayableAmount\"},\"NoncurrentAssetsLeaseholds\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsLeaseholds\"},\"NoncurrentAssetsLeaseholdImprovements\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsLeaseholdImprovements\"},\"NoncurrentAssetsPatents\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsPatents\"},\"NoncurrentAssetsCopyrights\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsCopyrights\"},\"NoncurrentAssetsGoodwill\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsGoodwill\"},\"NoncurrentAssetsOtherAssetsAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsOtherAssetsAmount\"},\"NoncurrentAssetsTotalAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsTotalAmount\"},\"TotalAssetsAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"TotalAssetsAmount\"},\"CurrentLiabilitiesAccountsPayableAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesAccountsPayableAmount\"},\"CurrentLiabilitiesNotesPayableAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesNotesPayableAmount\"},\"CurrentLiabilitiesCurrentMaturitiesOfLongTermDebtAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesCurrentMaturitiesOfLongTermDebtAmount\"},\"CurrentLiabilitiesAccruedLiabilitiesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesAccruedLiabilitiesAmount\"},\"CurrentLiabilitiesAccruedSalariesAndWagesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesAccruedSalariesAndWagesAmount\"},\"CurrentLiabilitiesCommissionsAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesCommissionsAmount\"},\"CurrentLiabilitiesInsuranceAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesInsuranceAmount\"},\"CurrentLiabilitiesInterestAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesInterestAmount\"},\"CurrentLiabilitiesPropertyTaxesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesPropertyTaxesAmount\"},\"CurrentLiabilitiesPayrollTaxesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesPayrollTaxesAmount\"},\"NoncurrentLiabilitiesContingentLiabilitiesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentLiabilitiesContingentLiabilitiesAmount\"},\"CurrentLiabilitiesSalesTaxesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesSalesTaxesAmount\"},\"CurrentLiabilitiesIncomeTaxesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesIncomeTaxesAmount\"},\"CurrentLiabilitiesPensionsAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesPensionsAmount\"},\"CurrentLiabilitiesRoyaltiesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesRoyaltiesAmount\"},\"CurrentLiabilitiesTotalAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesTotalAmount\"},\"NoncurrentLiabilitiesDeferredFederalIncomeTaxesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentLiabilitiesDeferredFederalIncomeTaxesAmount\"},\"NoncurrentLiabilitiesBondsAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentLiabilitiesBondsAmount\"},\"NoncurrentLiabilitiesLongTermDebtAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentLiabilitiesLongTermDebtAmount\"},\"NoncurrentLiabilitiesTotalAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentLiabilitiesTotalAmount\"},\"TotalLiabilitiesAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"TotalLiabilitiesAmount\"},\"StockholdersEquityCommonStockAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"StockholdersEquityCommonStockAmount\"},\"StockholdersEquityAdditionalPaidInCapitalAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"StockholdersEquityAdditionalPaidInCapitalAmount\"},\"StockholdersEquityRetainedEarningsAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"StockholdersEquityRetainedEarningsAmount\"},\"StockholdersEquityTotalAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"StockholdersEquityTotalAmount\"},\"TotalLiabilitiesPlusStockholdersEquityAmount\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"TotalLiabilitiesPlusStockholdersEquityAmount\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BalanceSheet\",\"path\":\"BalanceSheet.cdm.json/BalanceSheet\"},\"description\":\"The Balance Sheet is a 'snapshot' of the legal entity's financial position as of a single time.\\n\\nThe Balance Sheet is a financial statement that reports the assets, liabilities and equity of a legal entity as of a date or point in time.    Assets are listed on the left and liabilities and equity on the right. \\n\\nSince the assets and liabilities position of the entity may change every day there must be a reported date to identify the exact point in time in which the information is valid.\\n\\nThe Balance Sheet is considered to be the financial position of the legal entity as of the date on the statement.\\n\\nThe basic equation that is the foundation of the balance sheet is:\\n\\nAssets = Liabilities + Equity\\n\\nEach transaction causes at least two changes on the balance sheet.\\n\\nThe following is the representative 'template' of a simple Balance Sheet that can easily be customized for the target entity.\",\"primaryKey\":[\"LegalEntityId\",\"FinancialStatementId\",\"PeriodStartDate\",\"PeriodEndDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"LegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"LegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"FinancialStatementId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Financial Statement.\",\"isNullable\":false,\"name\":\"FinancialStatementId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the financial statement is prepared.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the financial statement is prepared.\",\"isNullable\":false,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsCashAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash in any form - such as waiting to be deposited, in bank accounts, checking accounts.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentAssetsCashAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsNotesReceivableAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Written promises to receive stated sums of money at future dates, classified as current (if due within 12 months) or non-current (if due after 12 months) of the balance sheet date.\\n\\nRead more: http://www.businessdictionary.com/definition/notes-receivable.html#ixzz17ie7v8jz\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentAssetsNotesReceivableAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsInventoriesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Inventories are items held for sale or used in the manufacture of products that will be sold.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentAssetsInventoriesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsPrepaidExpensesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Expenses such as insurance, rent, property taxes that are paid in advance.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentAssetsPrepaidExpensesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsMarketableSecuritiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash substitutes that is temporarily invested to earn a return.   These are short-term maturity instruments of less than one year maturity.\\n\\nThey should be relatively 'riskless' securities or investments.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentAssetsMarketableSecuritiesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsAccountsReceivablesLessAllowanceForDoubtfulAccountsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Accounts receivables are customer balances on outstanding credit sales that are reported at their net realizable value - minus any allowance for doubtful accounts.\\n\\nDoubtful accounts are those the management judges to be uncollectible during the account period.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentAssetsAccountsReceivablesLessAllowanceForDoubtfulAccountsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentAssetsTotalAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of current assets.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentAssetsTotalAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentLandAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Property, Plant And Equipment represent a company's fixed assets that are not consumed in the annual business operations and provide economic benefits for more than one year.\\n\\nThey are considered tangible because they have physical substance.\\n\\nLand as a fixed asset refers to property used in the business.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentLandAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentBuildingsAndLeaseholdImprovementsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Property, Plant And Equipment represent a company's fixed assets that are not consumed in the annual business operations and provide economic benefits for more than one year.\\n\\nThey are considered tangible because they have physical substance.\\n\\nBuildings include buildings and structures owned by the company.   Leasehold improvements are additions or improvements made to leased structures.    They are amortized by the lessee over the economic life of the improvement or the life of the lease whichever is shorter.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentBuildingsAndLeaseholdImprovementsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentEquipmentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Property, Plant And Equipment represent a company's fixed assets that are not consumed in the annual business operations and provide economic benefits for more than one year.\\n\\nThey are considered tangible because they have physical substance.\\n\\nEquipment represents the original cost including delivery and installation of the machinery and equipment used in business operations.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentEquipmentAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentLessAccumulatedDepreciationAndAmortizationAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Property, Plant And Equipment represent a company's fixed assets that are not consumed in the annual business operations and provide economic benefits for more than one year.\\n\\nThey are considered tangible because they have physical substance.\\n\\nThis is the accumulated depreciation and amortization for property, plant and equipment.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentLessAccumulatedDepreciationAndAmortizationAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsMortgagesPayableAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The mortgages held by the company.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentAssetsMortgagesPayableAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsLeaseholds\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Leasehold is a form of property tenure where one party buys the right to occupy land or a building for a given length of time. A lease is a legal estate leasehold that can be bought and sold on the open market and differs from a tenancy where a property is let on a periodic basis such as weekly or monthly\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentAssetsLeaseholds\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsLeaseholdImprovements\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Improvements on a leased asset that increase the value of the asset.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentAssetsLeaseholdImprovements\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsPatents\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The value of patents held.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentAssetsPatents\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsCopyrights\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The value of copyrights held.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentAssetsCopyrights\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsGoodwill\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The value of goodwill held.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentAssetsGoodwill\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsOtherAssetsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Other assets can include any number of noncurrent items such as property for sale, start-up costs, advance payments etc.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentAssetsOtherAssetsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentAssetsTotalAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of non-current assets recorded.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentAssetsTotalAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"TotalAssetsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total of all assets - current + noncurrent.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalAssetsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesAccountsPayableAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"AP are short-term obligations due from credit extended by suppliers etc. for the purchase of goods and services.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesAccountsPayableAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesNotesPayableAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Notes payable are short-term obligations in the form of promissory notes to suppliers or similar legal entities.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesNotesPayableAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesCurrentMaturitiesOfLongTermDebtAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount that will be repaid during the current year on long-term debt outstanding such as bonds, mortgages etc.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesCurrentMaturitiesOfLongTermDebtAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesAccruedLiabilitiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Accrued liabilities result from the recognition of an expense in the accounting records prior to the actual payment of cash.  \\n\\nThis is a because most corporations use the accrual rather than the cash basis of accounting in which revenue is recognized when it is earned and expenses are recorded when they are incurred regardless of when the cash is received or paid.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesAccruedLiabilitiesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesAccruedSalariesAndWagesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of current liabilities assigned to Accrued Salaries And Wages.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesAccruedSalariesAndWagesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesCommissionsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of current liabilities assigned to Commissions.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesCommissionsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesInsuranceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of current liabilities assigned to Insurance.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesInsuranceAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesInterestAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of current liabilities assigned to Interest.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesInterestAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesPropertyTaxesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of current liabilities assigned to Property Taxes.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesPropertyTaxesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesPayrollTaxesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of current liabilities assigned to Payroll Taxes.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesPayrollTaxesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentLiabilitiesContingentLiabilitiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Potential liabilities arising from past events - that a potential liability exists in the future.\\n\\nEx:\\n- Tax assessments\\n- Product warranties\\n- Pending lawsuits\\n- Litigation\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentLiabilitiesContingentLiabilitiesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesSalesTaxesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of current liabilities assigned to Sales Taxes.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesSalesTaxesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesIncomeTaxesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of current liabilities assigned to Income Taxes.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesIncomeTaxesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesPensionsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of current liabilities assigned to Pensions.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesPensionsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesRoyaltiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of current liabilities assigned to Royalties.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesRoyaltiesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"CurrentLiabilitiesTotalAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of current liabilities.\",\"isNullable\":true,\"scale\":2,\"name\":\"CurrentLiabilitiesTotalAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentLiabilitiesDeferredFederalIncomeTaxesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Deferred federal taxes.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentLiabilitiesDeferredFederalIncomeTaxesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentLiabilitiesBondsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Bonds that may be sold to the investing public.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentLiabilitiesBondsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentLiabilitiesLongTermDebtAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Deferred long term debt.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentLiabilitiesLongTermDebtAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"NoncurrentLiabilitiesTotalAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of noncurrent liabilities.\",\"isNullable\":true,\"scale\":2,\"name\":\"NoncurrentLiabilitiesTotalAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"TotalLiabilitiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of liabilities.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalLiabilitiesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"StockholdersEquityCommonStockAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Common stockholders have voting rights but do not receive a fixed return.    Dividends are declared by the company at the discretion of the board of directors.\",\"isNullable\":true,\"scale\":2,\"name\":\"StockholdersEquityCommonStockAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"StockholdersEquityAdditionalPaidInCapitalAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount by which the original price of the stock shares exceed par value.\",\"isNullable\":true,\"scale\":2,\"name\":\"StockholdersEquityAdditionalPaidInCapitalAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"StockholdersEquityRetainedEarningsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Retained earnings is the sum of the company has earned since its inception minus any payments made to shareholders in the form of cash or stock dividends.\\n\\nRetained earnings are funds a company has elected to reinvest in the operations of the business rather than pay out to stockholders in dividends.   \\n\\nIt is a measure of all undistributed earnings.\",\"isNullable\":true,\"scale\":2,\"name\":\"StockholdersEquityRetainedEarningsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"StockholdersEquityTotalAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of stockholders equity.\",\"isNullable\":true,\"scale\":2,\"name\":\"StockholdersEquityTotalAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BalanceSheet.cdm.json/BalanceSheet\",\"name\":\"TotalLiabilitiesPlusStockholdersEquityAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total of all liabilities plus stockholders equity.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalLiabilitiesPlusStockholdersEquityAmount\"}]}}}",
+			"Description": "The Balance Sheet is a 'snapshot' of the legal entity's financial position as of a single time.\n\nThe Balance Sheet is a financial statement that reports the assets, liabilities and equity of a legal entity as of a date or point in time.    Assets are listed on the left and liabilities and equity on the right. \n\nSince the assets and liabilities position of the entity may change every day there must be a reported date to identify the exact point in time in which the information is valid.\n\nThe Balance Sheet is considered to be the financial position of the legal entity as of the date on the statement.\n\nThe basic equation that is the foundation of the balance sheet is:\n\nAssets = Liabilities + Equity\n\nEach transaction causes at least two changes on the balance sheet.\n\nThe following is the representative 'template' of a simple Balance Sheet that can easily be customized for the target entity.",
+			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "LegalEntityId,FinancialStatementId,PeriodStartDate,PeriodEndDate",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "2",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"LegalEntityId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"FinancialStatementId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartDate\",\"type\":\"date\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndDate\",\"type\":\"date\",\"nullable\":false,\"metadata\":{}},{\"name\":\"CurrentAssetsCashAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentAssetsNotesReceivableAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentAssetsInventoriesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentAssetsPrepaidExpensesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentAssetsMarketableSecuritiesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentAssetsAccountsReceivablesLessAllowanceForDoubtfulAccountsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentAssetsTotalAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentLandAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentBuildingsAndLeaseholdImprovementsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentEquipmentAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentAssetsPropertyPlantAndEquipmentLessAccumulatedDepreciationAndAmortizationAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentAssetsMortgagesPayableAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentAssetsLeaseholds\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentAssetsLeaseholdImprovements\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentAssetsPatents\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentAssetsCopyrights\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentAssetsGoodwill\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentAssetsOtherAssetsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentAssetsTotalAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"TotalAssetsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesAccountsPayableAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesNotesPayableAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesCurrentMaturitiesOfLongTermDebtAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesAccruedLiabilitiesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesAccruedSalariesAndWagesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesCommissionsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesInsuranceAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesInterestAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesPropertyTaxesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesPayrollTaxesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentLiabilitiesContingentLiabilitiesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesSalesTaxesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesIncomeTaxesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesPensionsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesRoyaltiesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentLiabilitiesTotalAmount\",\"type\":\"",
+			"spark.sql.sources.schema.part.1": "decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentLiabilitiesDeferredFederalIncomeTaxesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentLiabilitiesBondsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentLiabilitiesLongTermDebtAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NoncurrentLiabilitiesTotalAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"TotalLiabilitiesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"StockholdersEquityCommonStockAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"StockholdersEquityAdditionalPaidInCapitalAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"StockholdersEquityRetainedEarningsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"StockholdersEquityTotalAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"TotalLiabilitiesPlusStockholdersEquityAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "d593a335-9f50-4708-a81c-a4119c7266ef",
+		"Description": "The Balance Sheet is a 'snapshot' of the legal entity's financial position as of a single time.\n\nThe Balance Sheet is a financial statement that reports the assets, liabilities and equity of a legal entity as of a date or point in time.    Assets are listed on the left and liabilities and equity on the right. \n\nSince the assets and liabilities position of the entity may change every day there must be a reported date to identify the exact point in time in which the information is valid.\n\nThe Balance Sheet is considered to be the financial position of the legal entity as of the date on the statement.\n\nThe basic equation that is the foundation of the balance sheet is:\n\nAssets = Liabilities + Equity\n\nEach transaction causes at least two changes on the balance sheet.\n\nThe following is the representative 'template' of a simple Balance Sheet that can easily be customized for the target entity."
+	},
+	"type": "TABLE"
+}

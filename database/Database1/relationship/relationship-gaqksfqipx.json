@@ -1,0 +1,29 @@
+{
+	"name": "relationship-gaqksfqipx",
+	"properties": {
+		"Name": "relationship-gaqksfqipx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Database1"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Auditor",
+		"ToTableName": "AuditorReport",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AuditorId",
+				"ToColumnName": "AuditorId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Auditor.cdm.json/Auditor\",\"toEntity\":\"AuditorReport.cdm.json/AuditorReport\",\"joinPairs\":[{\"fromAttribute\":\"AuditorId\",\"toAttribute\":\"AuditorId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "b247e60e-bd30-4ee1-8de4-15351d5ffbb8"
+	},
+	"type": "RELATIONSHIP"
+}

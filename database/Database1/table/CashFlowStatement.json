@@ -1,0 +1,900 @@
+{
+	"name": "CashFlowStatement",
+	"properties": {
+		"Name": "CashFlowStatement",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Database1",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "LegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "LegalEntityId"
+					}
+				},
+				{
+					"Name": "FinancialStatementId",
+					"Description": "The unique identifier of a Financial Statement.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "FinancialStatementId"
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the financial statement is prepared.",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "PeriodStartDate"
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the financial statement is prepared.",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "PeriodEndDate"
+					}
+				},
+				{
+					"Name": "CashReceiptsFromCustomersAmount",
+					"Description": "Cash received from customers for services and or goods purchased.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashReceiptsFromCustomersAmount"
+					}
+				},
+				{
+					"Name": "CashReceiptsFromInvestmentsAmount",
+					"Description": "Cash received from investments.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashReceiptsFromInvestmentsAmount"
+					}
+				},
+				{
+					"Name": "OtherCashReceiptsAmount",
+					"Description": "Other miscellaneous cash receipts amounts.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "OtherCashReceiptsAmount"
+					}
+				},
+				{
+					"Name": "CashPaidForInventoryPurchasesAmount",
+					"Description": "Cash paid out for purchase of inventory items.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashPaidForInventoryPurchasesAmount"
+					}
+				},
+				{
+					"Name": "CashPaidForGeneralOperatingAndAdministrativeExpensesAmount",
+					"Description": "Cash paid out to support general operating and administrative expenses.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashPaidForGeneralOperatingAndAdministrativeExpensesAmount"
+					}
+				},
+				{
+					"Name": "CashPaidForEmployeeEntitlementsAmount",
+					"Description": "Cash paid out for employee-related entitlements and obligations.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashPaidForEmployeeEntitlementsAmount"
+					}
+				},
+				{
+					"Name": "CashPaidForWageExpensesAmount",
+					"Description": "Cash paid for wage and salary expenses.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashPaidForWageExpensesAmount"
+					}
+				},
+				{
+					"Name": "CashPaidForInterestAmount",
+					"Description": "Cash paid to support interest-related fees and charges.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashPaidForInterestAmount"
+					}
+				},
+				{
+					"Name": "CashPaidForIncomeTaxesAmount",
+					"Description": "Cash paid for income taxes.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashPaidForIncomeTaxesAmount"
+					}
+				},
+				{
+					"Name": "DepreciationAmount",
+					"Description": "Cash paid to support depreciation charges.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "DepreciationAmount"
+					}
+				},
+				{
+					"Name": "NetCashFlowFromOperationsAmount",
+					"Description": "The net amount of cash flow from operations.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "NetCashFlowFromOperationsAmount"
+					}
+				},
+				{
+					"Name": "CashReceiptsFromSaleOfPropertyEquipmentAmount",
+					"Description": "Cash received from the sale of property and equipment.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashReceiptsFromSaleOfPropertyEquipmentAmount"
+					}
+				},
+				{
+					"Name": "CashReceiptsFromCollectionOfPrincipalOnLoansAmount",
+					"Description": "Cash received for the collection loan principal.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashReceiptsFromCollectionOfPrincipalOnLoansAmount"
+					}
+				},
+				{
+					"Name": "CashReceiptsFromSalesOfInvestmentSecuritiesAmount",
+					"Description": "Cash received for the sale of investments.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashReceiptsFromSalesOfInvestmentSecuritiesAmount"
+					}
+				},
+				{
+					"Name": "CashPaidForPurchaseOfPropertyAndEquipmentAmount",
+					"Description": "Cash paid out for the purchase of property and equipment.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashPaidForPurchaseOfPropertyAndEquipmentAmount"
+					}
+				},
+				{
+					"Name": "CashPaidForMakingLoansToOtherEntitiesAmount",
+					"Description": "Cash paid for loans made to other legal entities.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashPaidForMakingLoansToOtherEntitiesAmount"
+					}
+				},
+				{
+					"Name": "CashPaidForPurchaseOfInvestmentSecuritiesAmount",
+					"Description": "Cash paid for the purchase of investment securities.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashPaidForPurchaseOfInvestmentSecuritiesAmount"
+					}
+				},
+				{
+					"Name": "SalesOnMaturityOfInvestmentsAmount",
+					"Description": "Sales made on matured investments.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "SalesOnMaturityOfInvestmentsAmount"
+					}
+				},
+				{
+					"Name": "DispositionOfBusinessesAmount",
+					"Description": "Cash received for the disposition of businesses.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "DispositionOfBusinessesAmount"
+					}
+				},
+				{
+					"Name": "OtherInvestingActivitiesAmount",
+					"Description": "Other and miscellaneous investment activities funds received.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "OtherInvestingActivitiesAmount"
+					}
+				},
+				{
+					"Name": "NetCashFlowFromInvestmentActivitiesAmount",
+					"Description": "Net positive/negative cash flow from investment activities.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "NetCashFlowFromInvestmentActivitiesAmount"
+					}
+				},
+				{
+					"Name": "CashReceiptsFromIssuanceOfStockAmount",
+					"Description": "Cash received for the issue of stock/treasury stock.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashReceiptsFromIssuanceOfStockAmount"
+					}
+				},
+				{
+					"Name": "CashReceiptsFromBorrowingAmount",
+					"Description": "Cash received from borrowings.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashReceiptsFromBorrowingAmount"
+					}
+				},
+				{
+					"Name": "CashPaidForRepurchaseOfStockAmount",
+					"Description": "Cash paid for the repurchase of stock/treasury stock.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashPaidForRepurchaseOfStockAmount"
+					}
+				},
+				{
+					"Name": "CashPaidForRepaymentOfLoansAmount",
+					"Description": "Cash paid upon the repayment of loans.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashPaidForRepaymentOfLoansAmount"
+					}
+				},
+				{
+					"Name": "CashPaidForDividendsAmount",
+					"Description": "Cash paid for dividends.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashPaidForDividendsAmount"
+					}
+				},
+				{
+					"Name": "IssuanceOfLongTermDebtAmount",
+					"Description": "Funds applied to the issue of long-term debt.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "IssuanceOfLongTermDebtAmount"
+					}
+				},
+				{
+					"Name": "IncreaseDecreaseInShortTermBorrowingAmount",
+					"Description": "The increase/decrease of short-term borrowings amount.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "IncreaseDecreaseInShortTermBorrowingAmount"
+					}
+				},
+				{
+					"Name": "ShortTermBankLoansAmount",
+					"Description": "The amount of short-term bank amounts procured (less than 1 year).",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "ShortTermBankLoansAmount"
+					}
+				},
+				{
+					"Name": "LongTermBankLoansAmount",
+					"Description": "The amount of long-term bank amounts procured (greater than 1 year).",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "LongTermBankLoansAmount"
+					}
+				},
+				{
+					"Name": "StockholderLoansAmount",
+					"Description": "The amount of loans to stockholders.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "StockholderLoansAmount"
+					}
+				},
+				{
+					"Name": "SubordinatedDebtAmount",
+					"Description": "The amount of loans (or security) that ranks below other loans (or securities) with regard to claims on assets or earnings.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "SubordinatedDebtAmount"
+					}
+				},
+				{
+					"Name": "DividendsDrawsAmount",
+					"Description": "The amount of dividends and draws taken during the period.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "DividendsDrawsAmount"
+					}
+				},
+				{
+					"Name": "NotesPayableAmount",
+					"Description": "The amount of notes payable for the period.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "NotesPayableAmount"
+					}
+				},
+				{
+					"Name": "NetCashFlowFromFinancingActivitiesAmount",
+					"Description": "The net positive/negative cash flow from financing activities.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "NetCashFlowFromFinancingActivitiesAmount"
+					}
+				},
+				{
+					"Name": "CashAtTheBeginningOfReportingPeriodAmount",
+					"Description": "The amount of cash at the beginning of period.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashAtTheBeginningOfReportingPeriodAmount"
+					}
+				},
+				{
+					"Name": "CashAtTheEndOfReportingPeriodAmount",
+					"Description": "The amount of cash at the end of period.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashAtTheEndOfReportingPeriodAmount"
+					}
+				},
+				{
+					"Name": "NetIncreaseDecreaseInCashAmount",
+					"Description": "The net increase/decrease in cash for the period.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "NetIncreaseDecreaseInCashAmount"
+					}
+				},
+				{
+					"Name": "CashFlowStatementPreparationMethodId",
+					"Description": "The unique identifier of a Cash Flow Statement Preparation Method.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CashFlowStatement.cdm.json/CashFlowStatement",
+						"Name": "CashFlowStatementPreparationMethodId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "0b5366d3-7ee6-4d7d-838a-f6c941e0970f",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/CashFlowStatement",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://california@us1target2storage.dfs.core.windows.net/Database1/CashFlowStatement",
+				"Properties": {
+					"LinkedServiceName": "demo-ws-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LegalEntityId\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"LegalEntityId\"},\"FinancialStatementId\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"FinancialStatementId\"},\"PeriodStartDate\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"PeriodEndDate\"},\"CashReceiptsFromCustomersAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromCustomersAmount\"},\"CashReceiptsFromInvestmentsAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromInvestmentsAmount\"},\"OtherCashReceiptsAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"OtherCashReceiptsAmount\"},\"CashPaidForInventoryPurchasesAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForInventoryPurchasesAmount\"},\"CashPaidForGeneralOperatingAndAdministrativeExpensesAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForGeneralOperatingAndAdministrativeExpensesAmount\"},\"CashPaidForEmployeeEntitlementsAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForEmployeeEntitlementsAmount\"},\"CashPaidForWageExpensesAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForWageExpensesAmount\"},\"CashPaidForInterestAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForInterestAmount\"},\"CashPaidForIncomeTaxesAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForIncomeTaxesAmount\"},\"DepreciationAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"DepreciationAmount\"},\"NetCashFlowFromOperationsAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"NetCashFlowFromOperationsAmount\"},\"CashReceiptsFromSaleOfPropertyEquipmentAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromSaleOfPropertyEquipmentAmount\"},\"CashReceiptsFromCollectionOfPrincipalOnLoansAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromCollectionOfPrincipalOnLoansAmount\"},\"CashReceiptsFromSalesOfInvestmentSecuritiesAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromSalesOfInvestmentSecuritiesAmount\"},\"CashPaidForPurchaseOfPropertyAndEquipmentAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForPurchaseOfPropertyAndEquipmentAmount\"},\"CashPaidForMakingLoansToOtherEntitiesAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForMakingLoansToOtherEntitiesAmount\"},\"CashPaidForPurchaseOfInvestmentSecuritiesAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForPurchaseOfInvestmentSecuritiesAmount\"},\"SalesOnMaturityOfInvestmentsAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"SalesOnMaturityOfInvestmentsAmount\"},\"DispositionOfBusinessesAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"DispositionOfBusinessesAmount\"},\"OtherInvestingActivitiesAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"OtherInvestingActivitiesAmount\"},\"NetCashFlowFromInvestmentActivitiesAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"NetCashFlowFromInvestmentActivitiesAmount\"},\"CashReceiptsFromIssuanceOfStockAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromIssuanceOfStockAmount\"},\"CashReceiptsFromBorrowingAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromBorrowingAmount\"},\"CashPaidForRepurchaseOfStockAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForRepurchaseOfStockAmount\"},\"CashPaidForRepaymentOfLoansAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForRepaymentOfLoansAmount\"},\"CashPaidForDividendsAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForDividendsAmount\"},\"IssuanceOfLongTermDebtAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"IssuanceOfLongTermDebtAmount\"},\"IncreaseDecreaseInShortTermBorrowingAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"IncreaseDecreaseInShortTermBorrowingAmount\"},\"ShortTermBankLoansAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"ShortTermBankLoansAmount\"},\"LongTermBankLoansAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"LongTermBankLoansAmount\"},\"StockholderLoansAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"StockholderLoansAmount\"},\"SubordinatedDebtAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"SubordinatedDebtAmount\"},\"DividendsDrawsAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"DividendsDrawsAmount\"},\"NotesPayableAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"NotesPayableAmount\"},\"NetCashFlowFromFinancingActivitiesAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"NetCashFlowFromFinancingActivitiesAmount\"},\"CashAtTheBeginningOfReportingPeriodAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashAtTheBeginningOfReportingPeriodAmount\"},\"CashAtTheEndOfReportingPeriodAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashAtTheEndOfReportingPeriodAmount\"},\"NetIncreaseDecreaseInCashAmount\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"NetIncreaseDecreaseInCashAmount\"},\"CashFlowStatementPreparationMethodId\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashFlowStatementPreparationMethodId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CashFlowStatement\",\"path\":\"CashFlowStatement.cdm.json/CashFlowStatement\"},\"description\":\"The Cash Flow Statement reports inflows and outflows as cash - focusing upon profitability.\\n\\nCash flow from operating activities represents cash generated internally.   Investing and financing activities represents cash from external sources.\\n\\nThe cash flow statement is a reordering of information from the balance sheet.   The balance sheet shows account balances at the end of an accounting period, whereas the statement of cash flows shows 'changes' in the same account balances between accounting periods. \\n\\nIt is a statement of 'flows' because it shows changes over time rather than the absolute dollar amount of the accounts at a point in time as with the balance sheet.\\n\\nThe statement of cash flows is prepared by calculating the changes in all of the balance sheet accounts and then listing the accounts as inflows/outflows by operating, financing and investing activities.\\n\\nThe inflows less the outflows balance to and explain the change in the cash position.\\n\\nThe Cash Flow Statement helps management estimate future cash requirements.\\n\\nThe Cash Flow Statement has 3 sections:   \\n\\n(1)  Cash Flow From Operating Activities\\n(2)  Cash Flow From Investing Activities\\n(3)  Cash Flow From Financing Activities\\n\\nThe example below shows the Direct Method of Cash Flow Statement Preparation in which debits and credits are summarized directly to the Cash account.\",\"primaryKey\":[\"LegalEntityId\",\"FinancialStatementId\",\"PeriodStartDate\",\"PeriodEndDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"LegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"LegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"FinancialStatementId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Financial Statement.\",\"isNullable\":false,\"name\":\"FinancialStatementId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the financial statement is prepared.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the financial statement is prepared.\",\"isNullable\":false,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromCustomersAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash received from customers for services and or goods purchased.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashReceiptsFromCustomersAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromInvestmentsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash received from investments.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashReceiptsFromInvestmentsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"OtherCashReceiptsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Other miscellaneous cash receipts amounts.\",\"isNullable\":true,\"scale\":2,\"name\":\"OtherCashReceiptsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForInventoryPurchasesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid out for purchase of inventory items.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashPaidForInventoryPurchasesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForGeneralOperatingAndAdministrativeExpensesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid out to support general operating and administrative expenses.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashPaidForGeneralOperatingAndAdministrativeExpensesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForEmployeeEntitlementsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid out for employee-related entitlements and obligations.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashPaidForEmployeeEntitlementsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForWageExpensesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid for wage and salary expenses.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashPaidForWageExpensesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForInterestAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid to support interest-related fees and charges.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashPaidForInterestAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForIncomeTaxesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid for income taxes.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashPaidForIncomeTaxesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"DepreciationAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid to support depreciation charges.\",\"isNullable\":true,\"scale\":2,\"name\":\"DepreciationAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"NetCashFlowFromOperationsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The net amount of cash flow from operations.\",\"isNullable\":true,\"scale\":2,\"name\":\"NetCashFlowFromOperationsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromSaleOfPropertyEquipmentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash received from the sale of property and equipment.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashReceiptsFromSaleOfPropertyEquipmentAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromCollectionOfPrincipalOnLoansAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash received for the collection loan principal.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashReceiptsFromCollectionOfPrincipalOnLoansAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromSalesOfInvestmentSecuritiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash received for the sale of investments.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashReceiptsFromSalesOfInvestmentSecuritiesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForPurchaseOfPropertyAndEquipmentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid out for the purchase of property and equipment.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashPaidForPurchaseOfPropertyAndEquipmentAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForMakingLoansToOtherEntitiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid for loans made to other legal entities.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashPaidForMakingLoansToOtherEntitiesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForPurchaseOfInvestmentSecuritiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid for the purchase of investment securities.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashPaidForPurchaseOfInvestmentSecuritiesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"SalesOnMaturityOfInvestmentsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Sales made on matured investments.\",\"isNullable\":true,\"scale\":2,\"name\":\"SalesOnMaturityOfInvestmentsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"DispositionOfBusinessesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash received for the disposition of businesses.\",\"isNullable\":true,\"scale\":2,\"name\":\"DispositionOfBusinessesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"OtherInvestingActivitiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Other and miscellaneous investment activities funds received.\",\"isNullable\":true,\"scale\":2,\"name\":\"OtherInvestingActivitiesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"NetCashFlowFromInvestmentActivitiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Net positive/negative cash flow from investment activities.\",\"isNullable\":true,\"scale\":2,\"name\":\"NetCashFlowFromInvestmentActivitiesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromIssuanceOfStockAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash received for the issue of stock/treasury stock.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashReceiptsFromIssuanceOfStockAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashReceiptsFromBorrowingAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash received from borrowings.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashReceiptsFromBorrowingAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForRepurchaseOfStockAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid for the repurchase of stock/treasury stock.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashPaidForRepurchaseOfStockAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForRepaymentOfLoansAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid upon the repayment of loans.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashPaidForRepaymentOfLoansAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashPaidForDividendsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Cash paid for dividends.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashPaidForDividendsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"IssuanceOfLongTermDebtAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Funds applied to the issue of long-term debt.\",\"isNullable\":true,\"scale\":2,\"name\":\"IssuanceOfLongTermDebtAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"IncreaseDecreaseInShortTermBorrowingAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The increase/decrease of short-term borrowings amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"IncreaseDecreaseInShortTermBorrowingAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"ShortTermBankLoansAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of short-term bank amounts procured (less than 1 year).\",\"isNullable\":true,\"scale\":2,\"name\":\"ShortTermBankLoansAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"LongTermBankLoansAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of long-term bank amounts procured (greater than 1 year).\",\"isNullable\":true,\"scale\":2,\"name\":\"LongTermBankLoansAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"StockholderLoansAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of loans to stockholders.\",\"isNullable\":true,\"scale\":2,\"name\":\"StockholderLoansAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"SubordinatedDebtAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of loans (or security) that ranks below other loans (or securities) with regard to claims on assets or earnings.\",\"isNullable\":true,\"scale\":2,\"name\":\"SubordinatedDebtAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"DividendsDrawsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of dividends and draws taken during the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"DividendsDrawsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"NotesPayableAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of notes payable for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"NotesPayableAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"NetCashFlowFromFinancingActivitiesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The net positive/negative cash flow from financing activities.\",\"isNullable\":true,\"scale\":2,\"name\":\"NetCashFlowFromFinancingActivitiesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashAtTheBeginningOfReportingPeriodAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of cash at the beginning of period.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashAtTheBeginningOfReportingPeriodAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashAtTheEndOfReportingPeriodAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of cash at the end of period.\",\"isNullable\":true,\"scale\":2,\"name\":\"CashAtTheEndOfReportingPeriodAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"NetIncreaseDecreaseInCashAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The net increase/decrease in cash for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"NetIncreaseDecreaseInCashAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CashFlowStatement.cdm.json/CashFlowStatement\",\"name\":\"CashFlowStatementPreparationMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Cash Flow Statement Preparation Method.\",\"isNullable\":true,\"name\":\"CashFlowStatementPreparationMethodId\"}]}}}",
+			"Description": "The Cash Flow Statement reports inflows and outflows as cash - focusing upon profitability.\n\nCash flow from operating activities represents cash generated internally.   Investing and financing activities represents cash from external sources.\n\nThe cash flow statement is a reordering of information from the balance sheet.   The balance sheet shows account balances at the end of an accounting period, whereas the statement of cash flows shows 'changes' in the same account balances between accounting periods. \n\nIt is a statement of 'flows' because it shows changes over time rather than the absolute dollar amount of the accounts at a point in time as with the balance sheet.\n\nThe statement of cash flows is prepared by calculating the changes in all of the balance sheet accounts and then listing the accounts as inflows/outflows by operating, financing and investing activities.\n\nThe inflows less the outflows balance to and explain the change in the cash position.\n\nThe Cash Flow Statement helps management estimate future cash requirements.\n\nThe Cash Flow Statement has 3 sections:   \n\n(1)  Cash Flow From Operating Activities\n(2)  Cash Flow From Investing Activities\n(3)  Cash Flow From Financing Activities\n\nThe example below shows the Direct Method of Cash Flow Statement Preparation in which debits and credits are summarized directly to the Cash account.",
+			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "LegalEntityId,FinancialStatementId,PeriodStartDate,PeriodEndDate",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "2",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"LegalEntityId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"FinancialStatementId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartDate\",\"type\":\"date\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndDate\",\"type\":\"date\",\"nullable\":false,\"metadata\":{}},{\"name\":\"CashReceiptsFromCustomersAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashReceiptsFromInvestmentsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"OtherCashReceiptsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashPaidForInventoryPurchasesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashPaidForGeneralOperatingAndAdministrativeExpensesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashPaidForEmployeeEntitlementsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashPaidForWageExpensesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashPaidForInterestAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashPaidForIncomeTaxesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DepreciationAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NetCashFlowFromOperationsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashReceiptsFromSaleOfPropertyEquipmentAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashReceiptsFromCollectionOfPrincipalOnLoansAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashReceiptsFromSalesOfInvestmentSecuritiesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashPaidForPurchaseOfPropertyAndEquipmentAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashPaidForMakingLoansToOtherEntitiesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashPaidForPurchaseOfInvestmentSecuritiesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SalesOnMaturityOfInvestmentsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DispositionOfBusinessesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"OtherInvestingActivitiesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NetCashFlowFromInvestmentActivitiesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashReceiptsFromIssuanceOfStockAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashReceiptsFromBorrowingAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashPaidForRepurchaseOfStockAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashPaidForRepaymentOfLoansAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashPaidForDividendsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"IssuanceOfLongTermDebtAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"IncreaseDecreaseInShortTermBorrowingAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ShortTermBankLoansAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"LongTermBankLoansAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"StockholderLoansAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SubordinatedDebtAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DividendsDrawsAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NotesPayableAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NetCashFlowFromFinancingActivitiesAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashAtTheBeginningOfReportingPeriodAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashAtTheEndOfReportingPeriodAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NetIncreaseDecreaseInCash",
+			"spark.sql.sources.schema.part.1": "Amount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CashFlowStatementPreparationMethodId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "f67e390a-6b01-4a6c-995d-a00a20209c1d",
+		"Description": "The Cash Flow Statement reports inflows and outflows as cash - focusing upon profitability.\n\nCash flow from operating activities represents cash generated internally.   Investing and financing activities represents cash from external sources.\n\nThe cash flow statement is a reordering of information from the balance sheet.   The balance sheet shows account balances at the end of an accounting period, whereas the statement of cash flows shows 'changes' in the same account balances between accounting periods. \n\nIt is a statement of 'flows' because it shows changes over time rather than the absolute dollar amount of the accounts at a point in time as with the balance sheet.\n\nThe statement of cash flows is prepared by calculating the changes in all of the balance sheet accounts and then listing the accounts as inflows/outflows by operating, financing and investing activities.\n\nThe inflows less the outflows balance to and explain the change in the cash position.\n\nThe Cash Flow Statement helps management estimate future cash requirements.\n\nThe Cash Flow Statement has 3 sections:   \n\n(1)  Cash Flow From Operating Activities\n(2)  Cash Flow From Investing Activities\n(3)  Cash Flow From Financing Activities\n\nThe example below shows the Direct Method of Cash Flow Statement Preparation in which debits and credits are summarized directly to the Cash account."
+	},
+	"type": "TABLE"
+}

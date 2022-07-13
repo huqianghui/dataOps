@@ -1,0 +1,16 @@
+{
+	"name": "KQL script 1",
+	"properties": {
+		"content": {
+			"query": "",
+			"metadata": {
+				"language": "kql"
+			},
+			"currentConnection": {
+				"poolName": "adx4test2",
+				"databaseName": ""
+			}
+		},
+		"type": "KqlQuery"
+	}
+}
